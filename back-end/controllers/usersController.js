@@ -12,11 +12,10 @@ const {
 
 // INDEX SHOW ALL USERS
 users.get("/", async (req, res) => {
-  const allUsers = await getAllUsers();
-  res.json({ data: allUsers });
+  res.json({ data: await getAllUsers() });
 });
 
-// SHOW A USER BY ID
+// SHOW A USER BY USER ID
 users.get("/:id", async (req, res) => {
   const { id } = req.params;
   const user = await getUser(id);
@@ -27,7 +26,7 @@ users.get("/:id", async (req, res) => {
   }
 });
 
-// SHOW BY FIREBASE
+// SHOW USER BY FIREBASE ID
 users.get("/firebase/:id", async (req, res) => {
   const { id } = req.params;
   const user = await getUserbyFirebase(id);
@@ -38,13 +37,13 @@ users.get("/firebase/:id", async (req, res) => {
   }
 });
 
-// SHOW BARS BY USER PREFS
+// SHOW VENUES BY USER PREFERRED CATEGORIES
 users.get("/:id/preferences", async (req, res) => {
   const myUser = await getUser(req.params.id);
-  const myUserPrefs = [];
+  const venuesByUserCategories = [];
   const categories = myUser.atmosphere.split(", ");
   for (const category of categories) {
-    const tempArray = await axios
+    const yelpVenuesByCategory = await axios
       .get(
         `https://api.yelp.com/v3/businesses/search?location=NYC&categories=${category}`,
         {
@@ -56,35 +55,13 @@ users.get("/:id/preferences", async (req, res) => {
       .then((response) => {
         return response.data.businesses;
       });
-    myUserPrefs = [...myUserPrefs, ...tempArray];
+    venuesByUserCategories = [
+      ...venuesByUserCategories,
+      ...yelpVenuesByCategory,
+    ];
   }
 
-  res.send(myUserPrefs);
-});
-
-// SHOW VENUES BY USER PREFERENCES
-users.get("/:id/:yelp_id", async (req, res) => {
-  const { id, yelp_id } = req.params;
-  const myUser = await getUser(id);
-  const myUserPrefs = [];
-  const categories = myUser.atmosphere.split(", ");
-  for (const category of categories) {
-    const tempArray = await axios
-      .get(
-        `https://api.yelp.com/v3/businesses/search?location=NYC&categories=${category}`,
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
-          },
-        }
-      )
-      .then((response) => {
-        return response.data.businesses;
-      });
-    myUserPrefs = [...myUserPrefs, ...tempArray];
-  }
-
-  res.send(myUserPrefs);
+  res.send(venuesByUserCategories);
 });
 
 // CREATE USER

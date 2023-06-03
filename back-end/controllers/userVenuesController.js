@@ -7,39 +7,36 @@ const {
   deleteUserVenue,
 } = require("../queries/userVenues");
 
-// INDEX SHOW ALL USER FAVORITED Venues
+// INDEX SHOW ALL USER FAVORITED VENUES
 userVenues.get("/", async (req, res) => {
-  const allUserVenues = await getAllUserVenues();
-  res.json({ data: allUserVenues });
+  res.json({ data: await getAllUserVenues() });
 });
 
-// SHOW BY USER ID
+// SHOW VENUE BY USER ID
 userVenues.get("/:userid", async (req, res) => {
   const { userid } = req.params;
-  const userLikedVenues = await getVenueByUserId(userid);
-  res.json({ success: true, data: userLikedVenues });
+  res.json({ success: true, data: await getVenueByUserId(userid) });
 });
 
-// GET USER FAVORITE Venue ON YELP
+// GET USER FAVORITE VENUE ON YELP
+//Do I need this?
 //https://api.yelp.com/v3/businesses
 userVenues.get("/favorites/:yelpid", async (req, res) => {
-  const allUserVenues = await getAllUserVenues();
-  res.json({ data: allUserVenues });
+  res.json({ data: await getAllUserVenues() });
 });
 
-//POST
+// ADD NEW FAVORITE VENUE
 userVenues.post("/addfavorite", async (req, res) => {
   try {
-    const newUserVenue = await createUserVenue(req.body);
-    res.json({ data: newUserVenue });
+    res.json({ data: await createUserVenue(req.body) });
   } catch (error) {
     res
       .status(400)
-      .json({ success: false, data: "server cannot process request" });
+      .json({ success: false, data: "Cannot Add this Venue to Favorites" });
   }
 });
 
-//DELETE
+// DELETE VENUE FROM FAVORITES
 userVenues.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const deletedUserVenue = await deleteUserVenue(id);
@@ -50,8 +47,9 @@ userVenues.delete("/:id", async (req, res) => {
       res.status(404).json({ success: false, data: "User Venue not found" });
     }
   } else {
-    console.error(deletedUserVenue);
-    res.status(500).json({ success: false, data: "server error" });
+    res
+      .status(500)
+      .json({ success: false, data: "Could not process deletion request" });
   }
 });
 

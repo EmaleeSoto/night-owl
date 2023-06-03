@@ -1,5 +1,4 @@
 const express = require("express");
-const db = require("../db/dbConfig");
 const alcohol = express.Router();
 const {
   getAllAlcohols,
@@ -11,8 +10,7 @@ const {
 
 // INDEX SHOW ALL ALCOHOL
 alcohol.get("/", async (req, res) => {
-  const allAlcohols = await getAllAlcohols();
-  res.json({ data: allAlcohols });
+  res.json({ data: await getAllAlcohols() });
 });
 
 // SHOW BY ID
