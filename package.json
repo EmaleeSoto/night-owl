@@ -1,0 +1,19 @@
+{
+  "name": "worth-a-shot",
+  "version": "1.0.0",
+  "description": "My version of 8.3 Capstone Worth A Shot",
+  "main": "back-end/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmaleeSoto/worth-a-shot.git"
+  },
+  "author": "Emalee Soto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmaleeSoto/worth-a-shot/issues"
+  },
+  "homepage": "https://github.com/EmaleeSoto/worth-a-shot#readme"
+}
