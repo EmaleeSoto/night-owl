@@ -1,0 +1,14 @@
+.drink-header {
+  text-align: center;
+  text-decoration: underline;
+  font-size: xxx-large;
+}
+
+.alcohol-list {
+  margin: 2em 2em;
+}
+
+.alcohol-list img {
+  width: 60%;
+  height: auto;
+}

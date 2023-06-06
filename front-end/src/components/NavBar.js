@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import "./NavBar.css";
 
 const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
   const navigate = useNavigate();
@@ -6,11 +7,11 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
     <nav className="nav header" id={loggedIn && "nav-loggedin"}>
       <Link className="nav-link" to={loggedIn ? "/myhome" : "/"}>
         <div>
-          <img
+          {/* <img
             className="nav-logo"
             alt="Worth a Shot logo"
-            // src={require("../images/navlogo.png")}
-          />
+            src={require("../images/navlogo.png")}
+          /> */}
         </div>
       </Link>
       <div className="trending-link">

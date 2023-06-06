@@ -1,0 +1,75 @@
+#source-info {
+  text-align: center;
+}
+
+#source-info a {
+  color: #F4C744;
+}
+
+#type-info {
+  display: flex;
+  height: auto;
+  margin: 5%;
+  padding: 10px;
+  border: solid;
+  border-radius: 15px;
+  background-color: #061A43;
+}
+
+#type-info button {
+  width: 150px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+#alcohol-display-wrapper {
+  display: flex;
+
+}
+
+.drink-header {
+  text-align: center;
+}
+
+#type-button-wrapper {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+  margin: 2em 2em;
+}
+
+#user-flavors-button {
+  padding: 2%;
+}
+#user-flavors-button button {
+  font-size: 25px;
+}
+
+.alcohols-heading-wrapper {
+  text-align: center;
+}
+
+.alcohols-heading-wrapper h3 {
+  background-color: #061A43;
+  padding: 2%;
+  width: fit-content;
+  margin: auto;
+  border-radius: 15px;
+  border: solid #F4C744;
+}
+
+.drink-category-button {
+  font-size: 25px;
+  margin-top: 50px;
+  width: 150px;
+  border-radius: 50px;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+}
