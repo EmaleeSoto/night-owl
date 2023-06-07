@@ -13,11 +13,12 @@
     }
     &__header {
         font-size: 50px;
+        color: #E33147;
         margin-block-start: 20px;
         margin-block-end: 20px;
     }
     &__span {
-        color: #F5D332;
+        color: #E33147;
         font-weight: bold;
     }
     &__splashImage {
@@ -27,7 +28,11 @@
         margin-top: 10%;
     }
     &__tagline {
+        color: #E33147;
         font-size: 35px;
+    }
+    &__text {
+        color: #FEFEFE;
     }
 }
 
