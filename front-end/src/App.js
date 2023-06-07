@@ -1,3 +1,4 @@
+import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
@@ -10,7 +11,6 @@ import {
 } from "firebase/auth";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import "./App.css";
 import Onboarding from "./components/Onboarding";
 import NavBar from "./components/NavBar";
 import Drinks from "./components/Drinks";
@@ -118,7 +118,7 @@ const App = () => {
   };
   console.log("THIS IS USER: ", user);
   return (
-    <div className="worth-a-shot">
+    <div className="App">
       <Router>
         <NavBar
           signOutOfAccount={signOutOfAccount}

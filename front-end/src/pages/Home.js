@@ -1,29 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./Home.scss";
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <div className="home-subcontainer">
-        <h1 className="home-header">This is Worth a Shot!</h1>
-        <section className="home-text-container">
-          <p className="home-text">
+    <div className="home">
+      <div className="home__subcontainer">
+        <h1 className="home__header">This is Worth a Shot!</h1>
+        <section className="home__textContainer">
+          <p className="home__text">
             Welcome to Worth a Shot, an app designed to help adults explore one
             of the world's favorite pastimes.
           </p>
-          <p className="home-text">
+          <p className="home__text">
             New to the nightlife scene and don't know where to begin? Or are you
             a nightlife veteran looking for a way to explore new places? Well
             with our app, you can create an account, choose a preferred vibe or
             scene, and we'll provide you with new and exciting nightlife venues
             curated to your tastes. Decide the direction of your night out on
-            the town with our app! <span>It's worth a shot.</span>
+            the town with our app!{" "}
+            <span className="home__span">It's worth a shot.</span>
           </p>
         </section>
-        <h1 className="home-tagline">Your ultimate nightlife guide!</h1>
+        <h1 className="home__tagline">Your ultimate nightlife guide!</h1>
         <Link to={`/sign-up`}>
-          <button className="large-button">Let's get started!</button>
+          <button className="home__largeButton">Let's get started!</button>
         </Link>
         <h4>
           &ldquo;I feel sorry for people that don't drink, because when they
@@ -32,7 +33,7 @@ const Home = () => {
         </h4>
       </div>
       <img
-        className="splash"
+        className="home__splashImage"
         src="./images/splash.jpg"
         alt="Group of people partying"
       />
