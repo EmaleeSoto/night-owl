@@ -11,8 +11,8 @@ export default function Favorite({ user }) {
     axios
       .get(`${API}/userestablishments/${user.id}`)
       .then((response) => {
-        console.log(response.data.payload);
-        setLikedEstablishments([...likedEstablishments, response.data.payload]);
+        console.log(response.data);
+        setLikedEstablishments([...likedEstablishments, response.data]);
       })
       .catch();
     console.log("LIKED PLACES: ", likedEstablishments);
@@ -25,7 +25,9 @@ export default function Favorite({ user }) {
           <div key={index}>
             <h1>{establishment.name}</h1>
             <img alt="establishment">{establishment.image}</img>
-            <Link to={`${API}/establishments/${establishment.yelp_id}`}>View this Establishment</Link>
+            <Link to={`${API}/establishments/${establishment.yelp_id}`}>
+              View this Establishment
+            </Link>
           </div>
         );
       })}

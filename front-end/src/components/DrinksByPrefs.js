@@ -15,7 +15,7 @@ export default function DrinksByPrefs({ user }) {
       axios
         .get(`${API}/alcohols/flavors/${flavor}`)
         .then((response) => {
-          setUserDrinks([...userDrinks, ...response.data.payload]);
+          setUserDrinks([...userDrinks, ...response.data]);
         })
         .catch((error) => {
           console.log(error);

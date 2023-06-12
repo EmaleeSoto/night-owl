@@ -15,7 +15,7 @@ import Onboarding from "./components/Onboarding";
 import NavBar from "./components/NavBar";
 import Drinks from "./components/Drinks";
 import DrinksByPrefs from "./components/DrinksByPrefs";
-import LandingpagesignedIn from "./pages/LandingSignedIn";
+import LandingPageSignedIn from "./pages/LandingPageSignedIn";
 import UserSignIn from "./components/UserSignIn";
 import UserSignUp from "./components/UserSignUp";
 import IndividualDrink from "./components/IndividualDrink";
@@ -40,6 +40,7 @@ const App = () => {
     if (user) {
       // User is signed in.
       setLogin(true);
+      console.log(user.uid);
       setFirebaseId(user.uid); //firebase
       setUserEmail("");
     } else {
@@ -52,7 +53,7 @@ const App = () => {
     deleteUser(auth.currentUser)
       .then(() => {
         // User deleted.
-        alert("Closing time! Your account has been deleted.");
+        alert("Your account has been deleted.");
       })
       .catch((error) => {
         // An error ocurred
@@ -95,7 +96,7 @@ const App = () => {
       axios
         .get(`${API}/users/firebase/${firebaseId}`)
         .then((response) => {
-          setUser(response.data.payload);
+          setUser(response.data.oneUser);
         })
         .catch((error) => {
           console.log(error);
@@ -127,7 +128,7 @@ const App = () => {
         />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/myhome" element={<LandingpagesignedIn user={user} />} />
+          <Route path="/myhome" element={<LandingPageSignedIn user={user} />} />
           <Route
             path="/establishments"
             element={<Establishments user={user} />}

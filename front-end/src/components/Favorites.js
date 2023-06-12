@@ -12,8 +12,8 @@ export default function Favorites({ user, Favorite }) {
     axios
       .get(`${API}/userestablishments/${user.id}`)
       .then((response) => {
-        console.log(response.data.payload);
-        setLikedEstablishments([...response.data.payload]);
+        console.log(response.data);
+        setLikedEstablishments([...response.data]);
       })
       .catch();
     console.log("LIKED PLACES:", likedEstablishments);

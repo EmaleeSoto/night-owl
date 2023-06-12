@@ -19,7 +19,7 @@ const Drinks = () => {
     axios
       .get(`${API}/alcohols/category/${category}`)
       .then((response) => {
-        setBooze(response.data.payload);
+        setBooze(response.data);
       })
       .catch((error) => {
         console.log(error);

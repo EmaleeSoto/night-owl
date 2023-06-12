@@ -1,42 +1,61 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.scss";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
     <div className="home">
-      <div className="home__subcontainer">
-        <h1 className="home__header">This is Worth a Shot!</h1>
-        <section className="home__textContainer">
-          <p className="home__text">
-            Welcome to Worth a Shot, an app designed to help adults explore one
-            of the world's favorite pastimes.
-          </p>
-          <p className="home__text">
-            New to the nightlife scene and don't know where to begin? Or are you
-            a nightlife veteran looking for a way to explore new places? Well
-            with our app, you can create an account, choose a preferred vibe or
-            scene, and we'll provide you with new and exciting nightlife venues
-            curated to your tastes. Decide the direction of your night out on
-            the town with our app!{" "}
-            <span className="home__span">It's worth a shot.</span>
-          </p>
-        </section>
-        <h1 className="home__tagline">Your ultimate nightlife guide!</h1>
-        <Link to={`/sign-up`}>
-          <button className="home__largeButton">Let's get started!</button>
-        </Link>
-        <h4>
-          &ldquo;I feel sorry for people that don't drink, because when they
-          wake up in the morning, that is the best they're going to feel all
-          day.&rdquo; &#8211; Frank Sinatra
-        </h4>
+      <div className="home__firstPage">
+        <div className="home__textContainer">
+          <h1 className="home__header">
+            Your Night.
+            <br />
+            Your Way.
+          </h1>
+          <div className="home__splashContainer">
+            <img
+              className="home__splashImage"
+              src=""
+              alt="Group of people partying"
+            />
+          </div>
+          <Link to={`/sign-up`}>
+            <button className="home__startButton">
+              <span>Let's get started</span>
+            </button>
+          </Link>
+          <h4 className="home__quote">
+            &ldquo;I feel sorry for people that don't drink, because when they
+            wake up in the morning, that is the best they're going to feel all
+            day.&rdquo; &#8211; Frank Sinatra
+          </h4>
+        </div>
       </div>
-      <img
-        className="home__splashImage"
-        src="./images/splash.jpg"
-        alt="Group of people partying"
-      />
+      <div className="home__nextPage">
+        <div>
+          <h3>Discover new places</h3>
+          <p>
+            With Night Owl, you can find new hangout spots that match your
+            preferred vibes.
+          </p>
+        </div>
+        <div>
+          <h3>Learn your own tastes</h3>
+          <p>
+            Night Owl provides a guide on alcoholic beverages so you can explore
+            new drinks to try on your night out!
+          </p>
+        </div>
+        <div>
+          <h3>Meet new people</h3>
+          <p>
+            What's a good night out without some company? Meet likeminded people
+            to connect with
+          </p>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };
