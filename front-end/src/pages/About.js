@@ -1,97 +1,68 @@
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import "./About.css";
+import "./About.scss";
 
 const About = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <section className="about-section" data-aos="fade-up">
-      <h1 className="about-header">
-        Revolutionize your nightlife experience with Worth a Shot
-      </h1>
-      <div className="about-text">
+    <section className="aboutSection" data-aos="fade-up">
+      <h1 className="aboutSection__header">Why Night Owl?</h1>
+      <div className="aboutSection__text">
         <p>
-          Looking to get back into the nightlife scene? Whether you're a
-          seasoned bar-hopper or just looking to mix things up, Worth a Shot is
-          your new best friend for finding the best nightlife options your city
-          has to offer. With our sleek and user-friendly interface, which works
-          great on both desktop and mobile platforms, our app allows you to
-          search for bars, nightclubs, and other establishments based on type of
-          atmosphere you're looking for. If you've ever felt bored or
-          overwhelmed with the nightlife options in your city, we can help you
-          explore and discover new places to try. Using our unique onboarding
-          process combined with data provided by the Yelp API, we learn about
-          your preferences and tastes, so we can find you the perfect spot for a
-          night out.
+          Welcome to Night Owl, the ultimate social app for those who crave
+          unforgettable nights filled with the perfect ambiance, tantalizing
+          libations, and delightful connections. We're here to guide you through
+          the nocturnal wonders of your city and help you craft extraordinary
+          experiences that will leave you yearning for more.
         </p>
         <p>
-          In addition to helping you find the best bars and nightclubs, Worth a
-          Shot also offers a feature that allows you to discover new drinks and
-          cocktails. You can browse our curated list to search for a specific
-          type of drink. Each drink comes with a description and a list of
-          ingredients, making it easy for you to try out something new at the
-          bar. No matter if you're looking for a laid-back sports bar or a
-          trendy nightclub, Worth a Shot has you covered.
+          With Night Owl, finding your ideal nightlife destination has never
+          been easier. Our integration with the Yelp API allows you to
+          effortlessly discover venues that align with your desired atmosphere,
+          whether you seek the cozy intimacy of a speakeasy or the vibrant
+          energy of a bustling nightclub.
+        </p>
+        <p>
+          That's not all. Our extensive database of alcoholic beverages enables
+          you to dive into the world of mixology, empowering you to make
+          informed choices about the libations that tickle your taste buds.
+          Discover new cocktails, learn about their ingredients, and get
+          inspired to try something new when you arrive at your chosen
+          establishment.
+        </p>
+        <p>
+          What truly sets Night Owl apart is our commitment to fostering
+          connections. Connect with fellow night owls who share your passion for
+          memorable experiences, and together, create memories that will last a
+          lifetime. Night Owl is the catalyst for forging meaningful connections
+          during your nocturnal escapades.
+        </p>
+        <p>
+          Join us on Night Owl, where the night comes alive, friendships are
+          forged, and the possibilities are endless. Unleash your inner night
+          owl and embark on an extraordinary journey.
         </p>
       </div>
-      <h1 className="bios-header">Our Team</h1>
-      <section className="bios-section">
+      <h1 className="aboutSection__bioHeader">Meet Our Dev</h1>
+      <section className="aboutSection__bioSection">
         <article>
           <img
-            className="headshot"
-            src="./headshots/matt.png"
-            alt="Headshot of Matt Munroe"
-          />
-          <h3 className="bio-name">Matt Munroe</h3>
-          <h3 className="title-text">Front-End/Synergist</h3>
-          <a
-            href="https://github.com/MattNMunroe"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="icon"
-              alt="GitHub"
-              title="GitHub"
-              src="./icons/github.png"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/matthew-munroe-720b8b199/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="icon"
-              alt="LinkedIn"
-              title="LinkedIn"
-              src="./icons/linkedin.png"
-            />
-          </a>
-          <p className="bio-text">
-            Hey, I'm Matt, 8.3 Pursuit Fellow and a Creative from the jungles of
-            NYC. I possess a deep love for Drawing, Writing, and producing
-            Hip-Hop/Trap.
-          </p>
-        </article>
-        <article>
-          <img
-            className="headshot"
+            className="aboutSection__headshot"
             src="./headshots/emalee.png"
             alt="Headshot of Emalee Soto"
           />
-          <h3 className="bio-name">Emalee Soto</h3>
-          <h3 className="title-text">Back-End/Team Lead</h3>
+          <h3 className="aboutSection__name">Emalee Soto</h3>
+          <h3 className="aboutSection__title">Back-End/Team Lead</h3>
           <a
             href="https://github.com/EmaleeSoto"
             target="_blank"
             rel="noreferrer"
           >
             <img
-              className="icon"
+              className="aboutSection__icon"
               alt="GitHub"
               title="GitHub"
               src="./icons/github.png"
@@ -103,60 +74,27 @@ const About = () => {
             rel="noreferrer"
           >
             <img
-              className="icon"
+              className="aboutSection__icon"
               alt="LinkedIn"
               title="LinkedIn"
               src="./icons/linkedin.png"
             />
           </a>
-          <p className="bio-text">
+          <p className="aboutSection__bio">
             I'm a full-stack Junior Web Developer at the Pursuit Fellowship. I
             have studied Computer Science at Hunter College, and plan to finish
             my Bachelor's within the next two years. I love coding, gaming, and
             music!
           </p>
-        </article>
-        <article>
-          <img
-            className="headshot"
-            src="./headshots/jonathan.png"
-            alt="Headshot of Jonathan Scheiber"
-          />
-          <h3 className="bio-name">Jonathan Scheiber</h3>
-          <h3 className="title-text">Design/UX Lead</h3>
-          <a
-            href="https://github.com/Scheiber"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="icon"
-              alt="GitHub"
-              title="GitHub"
-              src="./icons/github.png"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jonscheiber/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="icon"
-              alt="LinkedIn"
-              title="LinkedIn"
-              src="./icons/linkedin.png"
-            />
-          </a>
-          <p className="bio-text">
-            I am a full-stack web developer with a background in IT and customer
-            service from New York, NY. I am currently learning JavaScript and
-            React. My interests include user experience (UX) design,
-            cybersecurity, and accessibility.
+          <p>
+            I was inspired to create Night Owl because, as a young adult, I find
+            that navigating the night life scene can be sometimes intimidating.
+            I wanted to use my engineering abilities to create an app that would
+            make socializing and exploring easier for night owls such as myself.
           </p>
         </article>
       </section>
-      <div className="source-text">
+      <div className="aboutSection__sourceText">
         <p>
           <a
             href="https://github.com/EmaleeSoto/capstone-worth-a-shot"
@@ -167,7 +105,7 @@ const About = () => {
           </a>{" "}
           available on GitHub.
         </p>
-        <p className="source-text">
+        <p className="aboutSection__sourceText">
           Made with love in New York City. The greatest city in the world.
         </p>
       </div>
