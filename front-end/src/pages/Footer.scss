@@ -1,51 +1,93 @@
+@import '../assets/utils/_colors.scss';
+
 .footer {
-    background-color: #0A042A;
-    color: #fff;
-    padding: 40px 20px;
+    background-color: $noir;
+    color: $snow_white;
+    padding: 20px 20px 0px 20px;
     margin-top: auto;
+    height: 40vh;
+    margin-top: 5%;
 
     &__content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    text-align: center;
     }
   
     &__logo {
+      display: flex;
+      align-items: center;
 
       h2 {
         font-size: 24px;
         font-weight: bold;
       }
+
+      &__mobileAppLogo {
+        width: 40%;
+      }
+      img {
+        width: 100px;
+        height: auto;
+        cursor: pointer;
+      }
     }
   
-    &__navigation {
+      &__navigationContainer {
+        display: flex;
+        align-items: flex-start;
+      }
+    
+      &__legal,
+      &__navList {
+        flex: 1;
+        text-align: left;
+        max-width: 200px;
+        margin-right: 10%;
+    
+        h5 {
+          margin-top: 0;
+          margin-bottom: 5px; /* Add a small margin below the h5 element */
+          font-size: large;
+        }
+    
+        ul {
+          padding-left: 0;
+          margin-top: 0;
+          margin-bottom: 0;
+          list-style-type: none; /* Remove the default bullet points */
+    
+          li {
+            margin-bottom: 5px; /* Add some vertical spacing between li elements */
+          }
 
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+          a {
+            color: $snow_white;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $cherry;
+          }
+        }
       }
-      
-      li {
-        display: inline-block;
-        margin-right: 10px;
+        
+      &__social {
+        text-align: left;
+        font-size: large;
+        h5 {
+          margin: 0;
+        }
       }
-      
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-    }
 
-    &__social-icons a {
-      color: #fff;
-      margin-right: 10px;
-      font-size: 18px;
+    &__social ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      list-style-type: none;
     }
     
     &__bottom {
       margin-top: 20px;
-      text-align: center;
+      margin: auto;
       p {
         font-size: 14px;
       }
