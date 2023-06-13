@@ -9,13 +9,12 @@ export default function Favorite({ user }) {
   console.log(user);
   useEffect(() => {
     axios
-      .get(`${API}/userestablishments/${user.id}`)
+      .get(`${API}/uservenues/${user.id}`)
       .then((response) => {
         console.log(response.data);
         setLikedEstablishments([...likedEstablishments, response.data]);
       })
       .catch();
-    console.log("LIKED PLACES: ", likedEstablishments);
   }, [user]);
 
   return (

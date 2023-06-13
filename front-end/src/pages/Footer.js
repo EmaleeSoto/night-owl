@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
+        <p>&copy; 2023 Night Owl. All rights reserved.</p>
       </div>
     </footer>
   );

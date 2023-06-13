@@ -5,30 +5,29 @@ import "./Favorites.css";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Favorites({ user, Favorite }) {
-  const [likedEstablishments, setLikedEstablishments] = useState([]);
+  const [likedVenues, setLikedVenues] = useState([]);
   console.log(user);
 
   useEffect(() => {
     axios
       .get(`${API}/userestablishments/${user.id}`)
       .then((response) => {
-        console.log(response.data);
-        setLikedEstablishments([...response.data]);
+        setLikedVenues([...response.data]);
       })
       .catch();
-    console.log("LIKED PLACES:", likedEstablishments);
+    console.log("LIKED PLACES:", likedVenues);
   }, [user]);
 
   return (
     <div className="favorite-page">
       <h1>Your Favorite Places</h1>
       <div className="favorites-container">
-        {likedEstablishments.map((establishment, index) => {
+        {likedVenues.map((likedVenue, index) => {
           return (
             <div className="favorites-cell" key={index}>
-              <Link to={`/establishment/${establishment.yelp_id}`}>
-                <h1 className="favorite-name">{establishment.name}</h1>
-                <img src={establishment.image} alt={establishment.name} />
+              <Link to={`/establishment/${likedVenue.yelp_id}`}>
+                <h1 className="favorite-name">{likedVenue.name}</h1>
+                <img src={likedVenue.image} alt={likedVenue.name} />
               </Link>
             </div>
           );

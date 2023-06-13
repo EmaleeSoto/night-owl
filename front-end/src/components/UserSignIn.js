@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import app from "../firebase";
 import axios from "axios";
 import "./UserSignIn.css";
-const API = process.env.REACT_APP_API_URL;
 
 export default function UserSignIn({ resetPassword }) {
   const [profile, setProfile] = useState({

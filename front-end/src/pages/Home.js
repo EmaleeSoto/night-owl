@@ -1,8 +1,12 @@
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
 import "./Home.scss";
 
 const Home = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <div className="home">
       <div className="home__firstPage">
@@ -36,7 +40,7 @@ const Home = () => {
         </div>
       </div>
       <hr />
-      <div className="home__nextPage">
+      <div className="home__nextPage" data-aos="fade-up">
         <section>
           Night Owl is a platform designed for night owls who love to explore
           the nightlife scene. Whether you're looking for new hangout spots,
