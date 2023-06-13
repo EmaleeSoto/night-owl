@@ -10,6 +10,7 @@ import {
   deleteUser,
 } from "firebase/auth";
 import Home from "./pages/Home";
+import Footer from "./pages/Footer";
 import About from "./pages/About";
 import Onboarding from "./components/Onboarding";
 import NavBar from "./components/NavBar";
@@ -178,6 +179,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<FourOFour loggedIn={loggedIn} />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

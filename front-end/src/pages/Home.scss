@@ -1,14 +1,16 @@
+@import '../assets/utils/_colors.scss';
 .home {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
   
     &__firstPage {
       display: flex; /* Use flexbox to position elements */
       justify-content: space-between; /* Align children to opposite ends */
-      align-items: center;
       height: 100vh;
-
     }
   
     &__textContainer {
@@ -17,36 +19,47 @@
   
     &__header {
       font-size: 9vw;
-      color: #E33147;
+      color: $rose_quartz;
+      margin: 0px;
     }
   
     &__span {
-      color: #E33147;
+      color: $rose_quartz;
       font-weight: bold;
     }
 
     &__quote {
-        color: #fff;
+        color: $snow_white;
         width: 80%;
         margin: auto;
         margin-top: 20px;
     }
   
     &__splashContainer {
-      width: 50%;
-      display: flex;
-      justify-content: flex-end; /* Align to the right */
-      align-items: center; /* Center vertically */
+        display: inline-block;
+    //   display: flex;
+    //   justify-content: flex-end; /* Align to the right */
+    //   align-items: center; /* Center vertically */
     }
   
     &__splashImage {
-      width: 100%;
+      width: 5%;
       height: auto;
-      
+    }
+
+    &__buttonSplashContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+
+    &__buttonContainer {
+        display: inline-block;
     }
   
     &__text {
-      color: #FEFEFE;
+      color: $snow_white;
       font-size: x-large;
     }
 
@@ -59,6 +72,7 @@
         display: flex;
         background-color: #fff;
         border-radius: 20px;
+        border: none;
         height: 3em;
         min-width: 25%;
         overflow: visible;
@@ -69,7 +83,8 @@
         span {
             font-size: large;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: #E33147;
+            font-weight: bolder;
+            color: $midnight_plum;
             margin: 0px 10px;
             text-decoration: none;
         }

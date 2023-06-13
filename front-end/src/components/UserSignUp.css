@@ -2,6 +2,7 @@
   text-align: center;
   justify-content: center;
   display: flex;
+  min-height: 100%;
 }
 
 .sign-up-container {

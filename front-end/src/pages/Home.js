@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.scss";
-import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -13,18 +12,22 @@ const Home = () => {
             <br />
             Your Way.
           </h1>
-          <div className="home__splashContainer">
+          <div className="home__buttonSplashContainer">
+            <div className="home__buttonContainer">
+              <Link to={`/sign-up`}>
+                <button className="home__startButton">
+                  <span>Let's get started</span>
+                </button>
+              </Link>
+            </div>
+
             <img
               className="home__splashImage"
-              src=""
+              src={require("../assets/owlLogo.png")}
               alt="Group of people partying"
             />
           </div>
-          <Link to={`/sign-up`}>
-            <button className="home__startButton">
-              <span>Let's get started</span>
-            </button>
-          </Link>
+
           <h4 className="home__quote">
             &ldquo;I feel sorry for people that don't drink, because when they
             wake up in the morning, that is the best they're going to feel all
@@ -55,7 +58,6 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
