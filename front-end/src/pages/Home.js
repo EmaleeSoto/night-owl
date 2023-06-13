@@ -35,8 +35,10 @@ const Home = () => {
           </h4>
         </div>
       </div>
+      <hr />
       <div className="home__nextPage">
         <div>
+          <img src={require("../assets/map.png")} alt="Discover new places" />
           <h3>Discover new places</h3>
           <p>
             With Night Owl, you can find new hangout spots that match your
@@ -44,6 +46,10 @@ const Home = () => {
           </p>
         </div>
         <div>
+          <img
+            src={require("../assets/alcohol.png")}
+            alt="Learn your own tastes"
+          />
           <h3>Learn your own tastes</h3>
           <p>
             Night Owl provides a guide on alcoholic beverages so you can explore
@@ -51,10 +57,11 @@ const Home = () => {
           </p>
         </div>
         <div>
+          <img src={require("../assets/dancing.jpeg")} alt="Meet new people" />
           <h3>Meet new people</h3>
           <p>
             What's a good night out without some company? Meet likeminded people
-            to connect with
+            to connect with.
           </p>
         </div>
       </div>
