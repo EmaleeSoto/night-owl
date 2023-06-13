@@ -37,9 +37,6 @@
   
     &__splashContainer {
         display: inline-block;
-    //   display: flex;
-    //   justify-content: flex-end; /* Align to the right */
-    //   align-items: center; /* Center vertically */
     }
   
     &__splashImage {
@@ -91,25 +88,34 @@
     }
 
     hr {
-
         width: 100%;
     }
   
     &__nextPage {
-        display: grid;
-          grid-template-columns: repeat(3, 1fr);
         // align-items: stretch; /* Stretch items vertically to have the same height */
         margin-top: 20px; /* Add some space below the firstPage section */
         color: $snow_white;
         height: 80vh;
-        align-items: center;
+        text-align: center;
+        
+        &__gridContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+        }
 
-
-        div {
+        &__gridCell {
           display: flex; /* Use flexbox for the inner divs */
           flex-direction: column; /* Stack elements vertically */
           align-items: center; /* Center items horizontally */
           text-align: center; /* Center text */
+        }
+        section {
+            width: 50%;
+            margin: auto;
+            margin-bottom: 3%;
+            margin-top: 3%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
       
         h3 {
