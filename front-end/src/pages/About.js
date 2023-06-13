@@ -51,7 +51,7 @@ const About = () => {
         <article>
           <img
             className="aboutSection__headshot"
-            src="./headshots/emalee.png"
+            src={require("../assets/headshot.jpeg")}
             alt="Headshot of Emalee Soto"
           />
           <h3 className="aboutSection__name">Emalee Soto</h3>
@@ -65,7 +65,7 @@ const About = () => {
               className="aboutSection__icon"
               alt="GitHub"
               title="GitHub"
-              src="./icons/github.png"
+              src={require("../assets/logos/github.png")}
             />
           </a>
           <a
@@ -77,7 +77,7 @@ const About = () => {
               className="aboutSection__icon"
               alt="LinkedIn"
               title="LinkedIn"
-              src="./icons/linkedin.png"
+              src={require("../assets/logos/linkedin.png")}
             />
           </a>
           <p className="aboutSection__bio">

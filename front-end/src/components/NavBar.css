@@ -52,6 +52,11 @@ nav li {
 
 .nav-logo {
   height: 100px;
+  
+}
+
+.nav-logo:hover {
+  filter: drop-shadow(10px 10px 20px red);
 }
 
 .nav-link {
