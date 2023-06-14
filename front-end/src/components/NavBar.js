@@ -1,14 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import "./NavBar.scss";
 
 const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
   const navigate = useNavigate();
   return (
-    <nav className="nav header" id={loggedIn && "nav-loggedin"}>
-      <Link className="nav-link" to={loggedIn ? "/myhome" : "/"}>
+    <nav className="navBar" id={loggedIn && "nav-loggedin"}>
+      <Link className="navBar__link" to={loggedIn ? "/myhome" : "/"}>
         <div>
           <img
-            className="nav-logo"
+            className="navBar__navLogo"
             alt="Worth a Shot logo"
             src={require("../assets/croppedLogo.png")}
           />
@@ -16,39 +16,39 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
       </Link>
       <ul>
         <li>
-          <div className="trending-link">
-            <Link className="nav-link" to={loggedIn ? "/myhome" : "/"}>
+          <div>
+            <Link className="navBar__link" to={loggedIn ? "/myhome" : "/"}>
               {loggedIn ? "My Home" : "Home Page"}
             </Link>
           </div>
         </li>
-        <li className="dropdown">
+        <li className="navBar__dropdown">
           <div>
-            <Link className="nav-link">Safety</Link>
+            <Link className="navBar__link">Safety</Link>
           </div>
-          <ul className="dropdown-menu">
+          <ul className="navBar__dropdownMenu">
             <li>
-              <Link className="nav-link" to="/community-guidelines">
+              <Link className="navBar__link" to="/community-guidelines">
                 Community Guidelines
               </Link>
             </li>
             <li>
-              <Link className="nav-link" to="/safety-tips">
+              <Link className="navBar__link" to="/safety-tips">
                 Safety Tips
               </Link>
             </li>
           </ul>
         </li>
         <li>
-          <div className="about-link">
-            <Link className="nav-link" to="/about">
+          <div className="navBar__aboutLink">
+            <Link className="navBar__link" to="/about">
               About
             </Link>
           </div>
         </li>
         <li>
           <Link
-            className={loggedIn ? "show nav-link" : "hide"}
+            className={loggedIn ? "navBar__show navBar__link" : "navBar__hide"}
             to="/myfavorites"
           >
             Favorites
@@ -56,7 +56,7 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
         </li>
         <li>
           <Link
-            className={loggedIn ? "show nav-link" : "hide"}
+            className={loggedIn ? "navBar__show navBar__link" : "navBar__hide"}
             to="/editprofile"
           >
             My Profile
@@ -66,7 +66,9 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
       </ul>
 
       <button
-        className={loggedIn ? "show tab" : "hide"}
+        className={
+          loggedIn ? "navBar__show navBar__loginButton" : "navBar__hide"
+        }
         id="logout"
         onClick={() => {
           signOutOfAccount();
@@ -76,7 +78,12 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
         Log out
       </button>
 
-      <div className={loggedIn ? "hide" : "show tab"} id="login-wrapper">
+      <div
+        className={
+          loggedIn ? "navBar__hide" : "navBar__show navBar__loginButton"
+        }
+        id="login-wrapper"
+      >
         <Link to="/sign-in" id="sign-in">
           <button>
             <span>Log in</span>
@@ -98,7 +105,7 @@ export default Nav;
 //   const navigate = useNavigate();
 //   return (
 //     <nav className="nav header" id={loggedIn && "nav-loggedin"}>
-//       <Link className="nav-link" to={loggedIn ? "/myhome" : "/"}>
+//       <Link className="navBar__link" to={loggedIn ? "/myhome" : "/"}>
 //         <div>
 //           <img
 //             className="nav-logo"
@@ -108,27 +115,27 @@ export default Nav;
 //         </div>
 //       </Link>
 //       <div className="trending-link">
-//         <Link className="nav-link" to={loggedIn ? "/myhome" : "/"}>
+//         <Link className="navBar__link" to={loggedIn ? "/myhome" : "/"}>
 //           {loggedIn ? "My Home" : "Home Page"}
 //         </Link>
 //       </div>
 //       <div>
-//         <Link className="nav-link">Safety</Link>
+//         <Link className="navBar__link">Safety</Link>
 //       </div>
-//       <div className="about-link">
-//         <Link className="nav-link" to="/about">
+//       <div className="navBar__aboutLink">
+//         <Link className="navBar__link" to="/about">
 //           About
 //         </Link>
 //       </div>
-//       <Link className={loggedIn ? "show nav-link" : "hide"} to="/myfavorites">
+//       <Link className={loggedIn ? "navBar__show navBar__link" : "navBar__hide"} to="/myfavorites">
 //         Favorites
 //       </Link>
-//       <Link className={loggedIn ? "show nav-link" : "hide"} to="/editprofile">
+//       <Link className={loggedIn ? "navBar__show navBar__link" : "navBar__hide"} to="/editprofile">
 //         My Profile
 //         {loggedIn && !userVerified ? "❗" : null}
 //       </Link>
 //       <button
-//         className={loggedIn ? "show tab" : "hide"}
+//         className={loggedIn ? "navBar__show navBar__loginButton" : "navBar__hide"}
 //         id="logout"
 //         onClick={() => {
 //           signOutOfAccount();
@@ -138,7 +145,7 @@ export default Nav;
 //         Log out
 //       </button>
 
-//       <div className={loggedIn ? "hide" : "show tab"} id="login-wrapper">
+//       <div className={loggedIn ? "navBar__hide" : "navBar__show navBar__loginButton"} id="login-wrapper">
 //         <Link to="/sign-in" id="sign-in">
 //           <button>
 //             <span>Log in</span>
