@@ -2,8 +2,7 @@ import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import app from "../firebase";
-import axios from "axios";
-import "./UserSignIn.css";
+import "./UserSignIn.scss";
 
 export default function UserSignIn({ resetPassword }) {
   const [profile, setProfile] = useState({
@@ -53,10 +52,10 @@ export default function UserSignIn({ resetPassword }) {
       });
   };
   return (
-    <div className="sign-in-section">
-      <div className="sign-in-section-container">
-        <h1 className="login-header">Let's get you logged in.</h1>
-        <div className="input-label-wrap">
+    <div className="signIn">
+      <div className="signIn__container">
+        <h1 className="signIn_header">Let's get you logged in.</h1>
+        <div className="signIn__inputLabelWrap">
           <label htmlFor="email">Email: </label>
           <input
             id="email"
@@ -69,7 +68,7 @@ export default function UserSignIn({ resetPassword }) {
           />
         </div>
         <br></br>
-        <div className="input-label-wrap">
+        <div className="signIn__inputLabelWrap">
           <label htmlFor="password">Password: </label>
           <input
             id="password"

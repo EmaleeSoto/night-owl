@@ -1,0 +1,56 @@
+@import '../assets/utils/_colors.scss';
+
+.signIn {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  min-height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  input {
+    border-radius: 5px;
+    width: 50%;
+    height: 2em;
+    border: 1px solid;
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  label {
+    display: flex;
+    width: 25%;
+    text-align: left;
+    align-items: center;
+  }
+
+  &__container {
+    border: 10px solid $noir;
+    border-radius: 15px;
+    background-color: $rose_quartz;
+    width: 30%;
+    padding: 3%;
+    margin: 3%;
+  }
+
+  &__inputLabelWrap{
+    display: flex;
+    justify-content: center;
+  }
+
+  #forgot-password:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sign-in-section-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .sign-in-section-container {
+    width: 80%;
+  }
+}
