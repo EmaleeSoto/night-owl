@@ -61,7 +61,7 @@ export default function SignUp() {
   return (
     <div className="signUp">
       <div className="signUp__container">
-        <h1 className="signUp__header">Let's get you signed up.</h1>
+        <h1 className="signUp__header">Create an Account</h1>
         <div className="signUp__inputLabelWrap">
           <label htmlFor="email">Email: </label>
           <input
@@ -88,8 +88,8 @@ export default function SignUp() {
           />
         </div>
         <br></br>
-        <button id="create" onClick={signUp}>
-          Create account
+        <button className="signUp__signUpButton" onClick={signUp}>
+          <span>Create account</span>
         </button>
         <h3>
           Our quick and easy onboarding experience will allow our algorithm to

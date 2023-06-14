@@ -1,25 +1,33 @@
+@import '../assets/utils/_colors.scss';
+
 .signUp {
   text-align: center;
   justify-content: center;
   display: flex;
   min-height: 100%;
+  color: $noir;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   label {
-    display: inline-block;
+    display: flex;
     width: 25%;
+    text-align: left;
+    align-items: center;
   }
 
   input {
     border-radius: 5px;
     width: 50%;
+    height: 2em;
+    border: 1px solid;
     margin-left: 7%;
     margin-right: 7%;
   }
 
   &__container {
-    border: 1px solid #f3c743;
+    border: 10px solid $noir;
     border-radius: 15px;
-    background-color: #061a43;
+    background-color: $rose_quartz;
     width: 30%;
     padding: 3%;
     margin: 3%;
@@ -28,6 +36,19 @@
   &__inputLabelWrap{
     display: flex;
     justify-content: center;
+  }
+
+  &__signUpButton {
+    display: flex;
+    background-color: $snow_white;
+    border-radius: 20px;
+    border: 1px solid $noir;
+    height: 1em;
+    overflow: visible;
+    padding: 20px 40px;
+    align-items: center;
+    margin: auto;
+    font-size: medium;
   }
  
 }
