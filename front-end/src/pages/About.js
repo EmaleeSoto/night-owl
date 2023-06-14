@@ -55,7 +55,9 @@ const About = () => {
             alt="Headshot of Emalee Soto"
           />
           <h3 className="aboutSection__name">Emalee Soto</h3>
-          <h3 className="aboutSection__title">Back-End/Team Lead</h3>
+          <h3 className="aboutSection__title">
+            Junior Fullstack Web Developer
+          </h3>
           <a
             href="https://github.com/EmaleeSoto"
             target="_blank"

@@ -86,7 +86,7 @@
 
   &__title {
     font-size: 18px;
-    color: $rose_quartz;
+    color: $cherry;
     margin-block-start: 0.25em;
     margin-block-end: 0.25em;
   }
@@ -96,7 +96,7 @@
   }
 
   &__icon:hover {
-    filter: drop-shadow(0px 15px 25px $cherry);
+    filter: drop-shadow(0 0 0.75rem $cherry);
   }
 }
 
