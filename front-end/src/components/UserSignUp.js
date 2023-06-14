@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import app from "../firebase";
-import "./UserSignUp.css";
+import "./UserSignUp.scss";
 
 export default function SignUp() {
   const [profile, setProfile] = useState({
@@ -28,10 +28,8 @@ export default function SignUp() {
         const user = userCredential.user;
         if (user) {
           alert(
-            "Welcome to Worth a Shot! You're now signed into your new account."
+            "Welcome to Night Owl! You're now signed into your new account."
           );
-          // userCreation(user.uid); //user.uid = adwqdqdf21
-          // Navigates to "Onboarding" page after successful sign-up. This should prompt the user to fill out a form
           navigate("/onboarding");
         }
         // ...
@@ -61,10 +59,10 @@ export default function SignUp() {
   };
 
   return (
-    <div className="sign-up-section">
-      <div className="sign-up-container">
-        <h1 className="signup-header">Let's get you signed up.</h1>
-        <div className="input-label-wrap">
+    <div className="signUp">
+      <div className="signUp__container">
+        <h1 className="signUp__header">Let's get you signed up.</h1>
+        <div className="signUp__inputLabelWrap">
           <label htmlFor="email">Email: </label>
           <input
             id="email"
@@ -77,7 +75,7 @@ export default function SignUp() {
           />
         </div>
         <br></br>
-        <div className="input-label-wrap">
+        <div className="signUp__inputLabelWrap">
           <label htmlFor="password">Password:</label>
           <input
             id="password"
