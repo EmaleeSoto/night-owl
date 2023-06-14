@@ -77,13 +77,17 @@
         h5 {
           margin: 0;
         }
+        ul {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          list-style-type: none;
+        }
+        img:hover {
+          filter: drop-shadow(0 0 0.75rem $cherry);
+          cursor: pointer;
+        }
       }
 
-    &__social ul {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      list-style-type: none;
-    }
     
     &__bottom {
       margin-top: 20px;
