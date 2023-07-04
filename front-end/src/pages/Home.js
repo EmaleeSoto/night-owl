@@ -24,12 +24,6 @@ const Home = () => {
                 </button>
               </Link>
             </div>
-
-            <img
-              className="home__splashImage"
-              src={require("../assets/owlLogo.png")}
-              alt="Group of people partying"
-            />
           </div>
 
           <h4 className="home__quote">
