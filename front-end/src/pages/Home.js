@@ -43,7 +43,7 @@ const Home = () => {
             <img src={require("../assets/map.png")} alt="Discover new places" />
             <h3>Discover new places</h3>
             <p>
-              With Night Owl, you can find new hangout spots that match your
+              With Night Owl, you can discover new hangout spots that match your
               preferred vibes.
             </p>
           </div>
@@ -52,10 +52,10 @@ const Home = () => {
               src={require("../assets/alcohol.png")}
               alt="Learn your own tastes"
             />
-            <h3>Learn your own tastes</h3>
+            <h3>Experience new flavors</h3>
             <p>
-              Night Owl provides a guide on alcoholic beverages so you can
-              explore new drinks to try on your night out!
+              Night Owl provides an extesnvie guide on alcoholic beverages so
+              you can explore a variety of drinks during your night out!
             </p>
           </div>
           <div className="home__nextPage__gridCell">
@@ -65,8 +65,8 @@ const Home = () => {
             />
             <h3>Meet new people</h3>
             <p>
-              What's a good night out without some company? Meet likeminded
-              people to connect with.
+              What's nightlife without some company? Meet other night owls and
+              expand your friend circle on our platform!
             </p>
           </div>
         </div>

@@ -107,8 +107,13 @@
         &__gridCell {
           display: flex;
           flex-direction: column;
+          min-height: 400px;
           align-items: center;
+          margin: 10px;
+          padding: 10px;
           text-align: center;
+          border: 1px solid $cherry;
+          border-radius: 20px;
 
           p {
             width: 70%;
@@ -137,7 +142,7 @@
         }
       
         img {
-          height: 200px;
+          max-height: 200px;
           width: auto;
           border-radius: 30px;
         }
