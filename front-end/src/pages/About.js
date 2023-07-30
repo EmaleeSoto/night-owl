@@ -9,7 +9,9 @@ const About = () => {
   }, []);
   return (
     <section className="aboutSection" data-aos="fade-up">
-      <h1 className="aboutSection__header">Why Night Owl?</h1>
+      <h1 className="aboutSection__header">
+        Reinventing the Night Life Experience
+      </h1>
       <div className="aboutSection__text">
         <p>
           Welcome to Night Owl, the ultimate social app for those who crave
@@ -46,56 +48,60 @@ const About = () => {
           owl and embark on an extraordinary journey.
         </p>
       </div>
-      <h1 className="aboutSection__bioHeader">Meet Our Dev</h1>
-      <section className="aboutSection__bioSection">
-        <article>
-          <img
-            className="aboutSection__headshot"
-            src={require("../assets/headshot.jpeg")}
-            alt="Headshot of Emalee Soto"
-          />
-          <h3 className="aboutSection__name">Emalee Soto</h3>
-          <h3 className="aboutSection__title">
-            Junior Fullstack Web Developer
-          </h3>
-          <a
-            href="https://github.com/EmaleeSoto"
-            target="_blank"
-            rel="noreferrer"
-          >
+      <div data-aos="fade-up">
+        <h1 className="aboutSection__bioHeader">Meet Our Dev</h1>
+        <section className="aboutSection__bioSection">
+          <article>
             <img
-              className="aboutSection__icon"
-              alt="GitHub"
-              title="GitHub"
-              src={require("../assets/logos/github.png")}
+              className="aboutSection__headshot"
+              src={require("../assets/headshot.jpeg")}
+              alt="Headshot of Emalee Soto"
             />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/emalee-soto/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="aboutSection__icon"
-              alt="LinkedIn"
-              title="LinkedIn"
-              src={require("../assets/logos/linkedin.png")}
-            />
-          </a>
-          <p className="aboutSection__bio">
-            I'm a full-stack Junior Web Developer at the Pursuit Fellowship. I
-            have studied Computer Science at Hunter College, and plan to finish
-            my Bachelor's within the next two years. I love coding, gaming, and
-            music!
-          </p>
-          <p>
-            I was inspired to create Night Owl because, as a young adult, I find
-            that navigating the night life scene can be sometimes intimidating.
-            I wanted to use my engineering abilities to create an app that would
-            make socializing and exploring easier for night owls such as myself.
-          </p>
-        </article>
-      </section>
+            <h3 className="aboutSection__name">Emalee Soto</h3>
+            <h3 className="aboutSection__title">
+              Junior Fullstack Web Developer
+            </h3>
+            <a
+              href="https://github.com/EmaleeSoto"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="aboutSection__icon"
+                alt="GitHub"
+                title="GitHub"
+                src={require("../assets/logos/github.png")}
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/emalee-soto/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="aboutSection__icon"
+                alt="LinkedIn"
+                title="LinkedIn"
+                src={require("../assets/logos/linkedin.png")}
+              />
+            </a>
+            <p className="aboutSection__bio">
+              I'm a full-stack Junior Web Developer who has completed the
+              year-long Pursuit Fellowship bootcamp in New York City. I have
+              studied Computer Science at Hunter College, and plan to finish my
+              Bachelor's Degree once I acquire my first engineering position. I
+              love coding, gaming, and music!
+            </p>
+            <p className="aboutSection__bio">
+              I was inspired to create Night Owl because, as a young adult, I
+              find that navigating the night life scene can be sometimes
+              intimidating. I wanted to use my engineering abilities to create
+              an app that would make socializing and exploring easier for night
+              owls such as myself.
+            </p>
+          </article>
+        </section>
+      </div>
       <div className="aboutSection__sourceText">
         <p>
           <a
