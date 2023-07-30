@@ -15,13 +15,15 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
         </div>
       </Link>
       <ul>
-        <li>
-          <div>
-            <Link className="navBar__link" to={loggedIn ? "/myhome" : "/"}>
-              {loggedIn ? "My Home" : "Home Page"}
-            </Link>
-          </div>
-        </li>
+        {loggedIn && (
+          <li>
+            <div>
+              <Link className="navBar__link" to={loggedIn ? "/myhome" : "/"}>
+                "My Home"
+              </Link>
+            </div>
+          </li>
+        )}
         <li className="navBar__dropdown">
           <div>
             <Link className="navBar__link">Safety</Link>

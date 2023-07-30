@@ -16,7 +16,7 @@ const Home = () => {
             <br />
             Your Way.
           </h1>
-          <div className="home__buttonSplashContainer">
+          <div className="home____homeButtonContainer">
             <div className="home__buttonContainer">
               <Link to={`/sign-up`}>
                 <button className="home__startButton">
@@ -36,12 +36,7 @@ const Home = () => {
       <hr />
       <div className="home__nextPage" data-aos="fade-up">
         <section>
-          Night Owl is a platform designed for night owls who love to explore
-          the nightlife scene. Whether you're looking for new hangout spots,
-          want to learn about different alcoholic beverages, or wish to connect
-          with like-minded individuals, Night Owl has got you covered. Join
-          Night Owl and unlock a world of exciting experiences for the nocturnal
-          adventurers
+          <h1>Not just another social site</h1>
         </section>
         <div className="home__nextPage__gridContainer">
           <div className="home__nextPage__gridCell">
@@ -74,6 +69,15 @@ const Home = () => {
               people to connect with.
             </p>
           </div>
+        </div>
+        <div className="home__nextPage__summary">
+          <h3>Why Night Owl?</h3>
+          <p>
+            Night Owl was developed with the goal of making nightlife navigation
+            simple and seamless. Finding the perfect venue for you and your
+            friends has never been easier. Join Night Owl and unlock a world of
+            exciting experiences for the night owl in you!
+          </p>
         </div>
       </div>
     </div>

@@ -35,16 +35,16 @@
         margin-top: 20px;
     }
   
-    &__splashContainer {
-        display: inline-block;
-    }
+    // &__splashContainer {
+    //     display: inline-block;
+    // }
   
     &__splashImage {
       width: 5%;
       height: auto;
     }
 
-    &__buttonSplashContainer {
+    &__homeButtonContainer {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -94,7 +94,8 @@
     &__nextPage {
         margin-top: 20px;
         color: $snow_white;
-        height: 80vh;
+        // height: 80vh;
+        display: inline-block;
         text-align: center;
         
         &__gridContainer {
@@ -109,16 +110,26 @@
           align-items: center;
           text-align: center;
         }
-        section {
-            width: 50%;
-            margin: auto;
-            margin-bottom: 3%;
-            margin-top: 3%;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        &__summary {
+          width: 40%;
+          margin: auto;
+          margin-top: 3%;
+          padding: 10px;
+          border: 1px solid $cherry;
+          border-radius: 20px;
+          box-shadow: 1px black;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
         }
-      
-        h3 {
+        
+        h1, h3 {
           color: $rose_quartz;
+        }
+
+        h1 {
+          font-size: xx-large;
         }
       
         img {
