@@ -70,7 +70,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="home__nextPage__summary">
+        <div className="home__nextPage__summary" data-aos="fade-up">
           <h3>Why Night Owl?</h3>
           <p>
             Night Owl was developed with the goal of making nightlife navigation
