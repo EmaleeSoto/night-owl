@@ -30,12 +30,12 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
           </div>
           <ul className="navBar__dropdownMenu">
             <li>
-              <Link className="navBar__link" to="/community-guidelines">
+              <Link className="navBar__link" to="/">
                 Community Guidelines
               </Link>
             </li>
             <li>
-              <Link className="navBar__link" to="/safety-tips">
+              <Link className="navBar__link" to="/">
                 Safety Tips
               </Link>
             </li>
