@@ -6,88 +6,88 @@
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: $midnight_plum;
+  background-color: $noir;
   height: 80px;
   margin-bottom: 5%;
 
- ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: larger;
-}
-
-&__link:hover {
-  color: $cherry;
-}
-
-&__dropdown {
-  position: relative;
-}
-
-&__dropdownMenu {
-  display: none;
-  position: absolute;
-  text-align: left;
-  background-color: $midnight_plum;
-  padding: 15px;
-  font-size: smaller;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
   li {
-    margin-bottom: 5px;
-    width: 400px; /* Adjust the width as desired */
-    padding-top: 20px; 
+    display: inline-block;
+    margin-right: 10px;
+    font-size: larger;
   }
-  
-}
 
-&__dropdown:hover &__dropdownMenu {
-  display: block;
-}
+  &__link:hover {
+    color: $cherry;
+  }
 
-&__navLogo {
-  height: 100px;
-  
-}
+  &__dropdown {
+    position: relative;
+  }
 
-&__navLogo:hover {
-  filter: drop-shadow(10px 10px 20px $cherry);
-}
+  &__dropdownMenu {
+    display: none;
+    position: absolute;
+    text-align: left;
+    background-color: $midnight_plum;
+    padding: 15px;
+    font-size: smaller;
 
-&__link {
-  text-align: center;
-  margin-right: 20px;
-  text-decoration: none;
-  color: $snow_white;
-  font-weight: bold;
-  max-height: 80px;
+    li {
+      margin-bottom: 5px;
+      width: 400px; /* Adjust the width as desired */
+      padding-top: 20px; 
+    }
+    
+  }
 
-  div {
+  &__dropdown:hover &__dropdownMenu {
+    display: block;
+  }
+
+  &__navLogo {
+    max-height: 70px;
+    margin: 5px 0px 3px 10px;
+  }
+
+  &__navLogo:hover {
+    filter: drop-shadow(10px 10px 20px $cherry);
+  }
+
+  &__link {
+    text-align: center;
+    margin-right: 20px;
+    text-decoration: none;
+    color: $snow_white;
+    font-weight: bold;
     max-height: 80px;
+
+    div {
+      max-height: 80px;
+    }
   }
-}
 
-&__loginButton {
-  padding: 8px 16px;
-  background-color: $rose_quartz;
-  color: $snow_white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  &__loginButton {
+    padding: 8px 16px;
+    background-color: $rose_quartz;
+    color: $snow_white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-&__show {
-  display: inline-block;
-}
+  &__show {
+    display: inline-block;
+  }
 
-&__hide {
-  display: none;
-}
+  &__hide {
+    display: none;
+  }
 
 }
 

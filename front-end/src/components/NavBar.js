@@ -10,7 +10,7 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
           <img
             className="navBar__navLogo"
             alt="Worth a Shot logo"
-            src={require("../assets/croppedLogo.png")}
+            src={require("../assets/appLogo.png")}
           />
         </div>
       </Link>
