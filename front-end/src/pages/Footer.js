@@ -77,10 +77,9 @@ export default function Footer() {
       <hr />
       <div class="footer__content">
         <div class="footer__logo">
-          {/* <!-- Your logo or brand name here --> */}
           <h2>Get the app!</h2>
-          <div className="logo__mobileAppLogo">
-            <img src={require("../assets/mobile-app.png")} />
+          <div className="footer__logo__mobileAppLogo">
+            <img src={require("../assets/logos/mobile-logos.png")} />
           </div>
         </div>
       </div>
