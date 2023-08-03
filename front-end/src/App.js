@@ -35,18 +35,17 @@ const App = () => {
   const [userVerified, setUserVerified] = useState(false);
   const [firebaseId, setFirebaseId] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [accountModalOpen, setAccountModalOpen] = useState(false);
   const auth = getAuth();
 
   onAuthStateChanged(auth, (user) => {
+    console.log("USEEFFECT RAN");
     if (user) {
       // User is signed in.
       setLogin(true);
       console.log(user.uid);
       setFirebaseId(user.uid); //firebase
       setUserEmail("");
-    } else {
-      // No user is signed in.
-      setLogin(false);
     }
   });
 
@@ -112,13 +111,14 @@ const App = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
+        setLogin(false);
         alert("You have signed out");
       })
       .catch((error) => {
         // An error happened.
       });
   };
-  console.log("THIS IS USER: ", user);
+  // console.log("THIS IS USER: ", user);
   return (
     <div className="App">
       <Router>
@@ -126,9 +126,18 @@ const App = () => {
           signOutOfAccount={signOutOfAccount}
           loggedIn={loggedIn}
           userVerified={userVerified}
+          setAccountModalOpen={setAccountModalOpen}
         />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                accountModalOpen={accountModalOpen}
+                setAccountModalOpen={setAccountModalOpen}
+              />
+            }
+          />
           <Route path="/myhome" element={<LandingPageSignedIn user={user} />} />
           <Route
             path="/establishments"

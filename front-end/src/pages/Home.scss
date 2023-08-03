@@ -6,6 +6,12 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100%;
+
+  //   &__show {
+  //     // position: static;
+  //     // overflow: hidden;
+  //     overflow-y: hidden;
+  // }
   
     &__firstPage {
       display: flex; 

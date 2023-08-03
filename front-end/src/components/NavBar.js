@@ -1,8 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.scss";
 
-const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
+const Nav = ({
+  signOutOfAccount,
+  loggedIn,
+  userVerified,
+  setAccountModalOpen,
+}) => {
   const navigate = useNavigate();
+
+  const openModal = () => {
+    setAccountModalOpen(true);
+    console.log("Opened");
+  };
+
   return (
     <nav className="navBar" id={loggedIn && "nav-loggedin"}>
       <Link className="navBar__link" to={loggedIn ? "/myhome" : "/"}>
@@ -82,20 +93,12 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
 
       <div
         className={
-          loggedIn ? "navBar__hide" : "navBar__show navBar__loginButton"
+          loggedIn ? "navBar__hide" : "navBar__show navBar__loginButtonWrapper"
         }
-        id="login-wrapper"
       >
-        <Link to="/sign-in" id="sign-in">
-          <button>
-            <span>Log in</span>
-          </button>
-        </Link>
-        <Link to="/sign-up" id="sign-up">
-          <button>
-            <span>Sign up</span>
-          </button>
-        </Link>
+        <button onClick={openModal} id="sign-in-button">
+          <span>Log in</span>
+        </button>
       </div>
     </nav>
   );
