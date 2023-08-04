@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import LoginModal from "../components/LoginModal";
+import LoginModal from "../components/auth/LoginModal";
 import Aos from "aos";
 import "./Home.scss";
 
-const Home = ({ accountModalOpen, setAccountModalOpen }) => {
+const Home = ({ homeModalOpen, setHomeModalOpen, openModal }) => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <div className={`home ${accountModalOpen ? "show" : "hide"}`}>
-      {accountModalOpen && (
+    <div className={`home ${homeModalOpen ? "show" : "hide"}`}>
+      {homeModalOpen && (
         <LoginModal
-          accountModalOpen={accountModalOpen}
-          setAccountModalOpen={setAccountModalOpen}
+          homeModalOpen={homeModalOpen}
+          setHomeModalOpen={setHomeModalOpen}
         />
       )}
       <div className="home__firstPage">
@@ -25,11 +25,9 @@ const Home = ({ accountModalOpen, setAccountModalOpen }) => {
           </h1>
           <div className="home____homeButtonContainer">
             <div className="home__buttonContainer">
-              <Link to={`/sign-up`}>
-                <button className="home__startButton">
-                  <span>Let's get started</span>
-                </button>
-              </Link>
+              <button className="home__startButton" onClick={openModal}>
+                <span>Create Accountd</span>
+              </button>
             </div>
           </div>
 

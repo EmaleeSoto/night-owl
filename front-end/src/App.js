@@ -12,19 +12,19 @@ import {
 import Home from "./pages/Home";
 import Footer from "./pages/Footer";
 import About from "./pages/About";
-import Onboarding from "./components/Onboarding";
-import NavBar from "./components/NavBar";
-import Drinks from "./components/Drinks";
-import DrinksByPrefs from "./components/DrinksByPrefs";
+import Onboarding from "./components/user/Onboarding";
+import Nav from "./components/Nav";
+import Drinks from "./components/beverages/Drinks";
+import DrinksByPrefs from "./components/beverages/DrinksByPrefs";
 import LandingPageSignedIn from "./pages/LandingPageSignedIn";
-import UserSignIn from "./components/UserSignIn";
-import UserSignUp from "./components/UserSignUp";
-import IndividualDrink from "./components/IndividualDrink";
-import DrinksCategories from "./components/DrinksCategories";
-import Establishments from "./components/Establishments";
-import Favorites from "./components/Favorites";
-import EditProfile from "./components/EditProfile";
-import ShowEstablishment from "./components/ShowEstablishment";
+import UserSignIn from "./components/auth/UserSignIn";
+import UserSignUp from "./components/auth/UserSignUp";
+import IndividualDrink from "./components/beverages/IndividualDrink";
+import DrinksCategories from "./components/beverages/DrinksCategories";
+import Establishments from "./components/venues/Establishments";
+import Favorites from "./components/user/Favorites";
+import EditProfile from "./components/auth/EditProfile";
+import ShowEstablishment from "./components/venues/ShowEstablishment";
 import FourOFour from "./pages/FourOFour";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
@@ -35,11 +35,10 @@ const App = () => {
   const [userVerified, setUserVerified] = useState(false);
   const [firebaseId, setFirebaseId] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const [accountModalOpen, setAccountModalOpen] = useState(false);
+  const [homeModalOpen, setHomeModalOpen] = useState(false);
   const auth = getAuth();
 
   onAuthStateChanged(auth, (user) => {
-    console.log("USEEFFECT RAN");
     if (user) {
       // User is signed in.
       setLogin(true);
@@ -118,23 +117,29 @@ const App = () => {
         // An error happened.
       });
   };
-  // console.log("THIS IS USER: ", user);
+
+  const openModal = (event) => {
+    setHomeModalOpen(true);
+    console.log(event.target.id);
+  };
+
   return (
     <div className="App">
       <Router>
-        <NavBar
+        <Nav
           signOutOfAccount={signOutOfAccount}
           loggedIn={loggedIn}
           userVerified={userVerified}
-          setAccountModalOpen={setAccountModalOpen}
+          openModal={openModal}
         />
         <Routes>
           <Route
             path="/"
             element={
               <Home
-                accountModalOpen={accountModalOpen}
-                setAccountModalOpen={setAccountModalOpen}
+                homeModalOpen={homeModalOpen}
+                setHomeModalOpen={setHomeModalOpen}
+                openModal={openModal}
               />
             }
           />

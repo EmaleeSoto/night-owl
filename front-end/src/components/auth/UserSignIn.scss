@@ -1,19 +1,12 @@
-@import '../assets/utils/_colors.scss';
+@import '../../assets/utils/colors';
 
-.signUp {
+
+.signIn {
   text-align: center;
   justify-content: center;
   display: flex;
   min-height: 100%;
-  color: $noir;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-  label {
-    display: flex;
-    width: 25%;
-    text-align: left;
-    align-items: center;
-  }
 
   input {
     border-radius: 5px;
@@ -22,6 +15,13 @@
     border: 1px solid;
     margin-left: 7%;
     margin-right: 7%;
+  }
+
+  label {
+    display: flex;
+    width: 25%;
+    text-align: left;
+    align-items: center;
   }
 
   &__container {
@@ -38,29 +38,20 @@
     justify-content: center;
   }
 
-  &__signUpButton {
-    display: flex;
-    background-color: $snow_white;
-    border-radius: 20px;
-    border: 1px solid $noir;
-    height: 1em;
-    overflow: visible;
-    padding: 20px 40px;
-    align-items: center;
-    margin: auto;
-    font-size: medium;
+  #forgot-password:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
- 
 }
 
 @media screen and (max-width: 1024px) {
-  .sign-up-container {
+  .sign-in-section-container {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 690px) {
-  .sign-up-container {
+  .sign-in-section-container {
     width: 80%;
   }
 }
