@@ -10,12 +10,7 @@ const Home = ({ homeModalOpen, setHomeModalOpen, openModal }) => {
   }, []);
   return (
     <div className={`home ${homeModalOpen ? "show" : "hide"}`}>
-      {homeModalOpen && (
-        <LoginModal
-          homeModalOpen={homeModalOpen}
-          setHomeModalOpen={setHomeModalOpen}
-        />
-      )}
+      {homeModalOpen && <LoginModal setHomeModalOpen={setHomeModalOpen} />}
       <div className="home__firstPage">
         <div className="home__textContainer">
           <h1 className="home__header">
@@ -26,7 +21,7 @@ const Home = ({ homeModalOpen, setHomeModalOpen, openModal }) => {
           <div className="home____homeButtonContainer">
             <div className="home__buttonContainer">
               <button className="home__startButton" onClick={openModal}>
-                <span>Create Accountd</span>
+                <span>Create Account</span>
               </button>
             </div>
           </div>

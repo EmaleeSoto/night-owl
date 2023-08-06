@@ -1,0 +1,25 @@
+@import '../assets/utils/_colors.scss';
+.loginMethod {
+    text-align: center;
+
+    &__loginButton {
+        width: 80%;
+        margin: 3px auto 3px auto;
+
+        &__loginLink {
+            display: inline-block;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+    
+            img {
+                width: 24px;
+                height: auto;
+            }
+        }
+
+    }
+
+
+}

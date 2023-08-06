@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 import Footer from "./pages/Footer";
 import About from "./pages/About";
 import Onboarding from "./components/user/Onboarding";
-import Nav from "./components/Nav";
+import NavBar from "./components/Nav";
 import Drinks from "./components/beverages/Drinks";
 import DrinksByPrefs from "./components/beverages/DrinksByPrefs";
 import LandingPageSignedIn from "./pages/LandingPageSignedIn";
@@ -42,7 +42,6 @@ const App = () => {
     if (user) {
       // User is signed in.
       setLogin(true);
-      console.log(user.uid);
       setFirebaseId(user.uid); //firebase
       setUserEmail("");
     }
@@ -120,30 +119,35 @@ const App = () => {
 
   const openModal = (event) => {
     setHomeModalOpen(true);
-    console.log(event.target.id);
   };
 
   return (
     <div className="App">
       <Router>
-        <Nav
+        <NavBar
           signOutOfAccount={signOutOfAccount}
           loggedIn={loggedIn}
           userVerified={userVerified}
           openModal={openModal}
         />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                homeModalOpen={homeModalOpen}
-                setHomeModalOpen={setHomeModalOpen}
-                openModal={openModal}
-              />
-            }
-          />
-          <Route path="/myhome" element={<LandingPageSignedIn user={user} />} />
+          {loggedIn ? (
+            <Route
+              path="/myhome"
+              element={<LandingPageSignedIn user={user} />}
+            />
+          ) : (
+            <Route
+              path="/"
+              element={
+                <Home
+                  homeModalOpen={homeModalOpen}
+                  setHomeModalOpen={setHomeModalOpen}
+                  openModal={openModal}
+                />
+              }
+            />
+          )}
           <Route
             path="/establishments"
             element={<Establishments user={user} />}

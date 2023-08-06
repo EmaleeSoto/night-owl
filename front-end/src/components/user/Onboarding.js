@@ -34,7 +34,7 @@ export default function Onboarding({ userFirebaseId, callback }) {
     await axios
       .post(`${API}/users`, user)
       .then((response) => {
-        callback(response.data);
+        callback(response.data.oneUser);
         navigate("/myhome");
       })
       .catch((error) => {
@@ -145,6 +145,7 @@ export default function Onboarding({ userFirebaseId, callback }) {
     }
   };
 
+  console.log(user);
   //TODO: Add age validity check
   return (
     <div className="onboarding">

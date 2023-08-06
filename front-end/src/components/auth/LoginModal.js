@@ -1,7 +1,8 @@
 import { useEffect } from "react";
+import LoginMethod from "../LoginMethod";
 import "./LoginModal.scss";
 
-const LoginModal = ({ homeModalOpen, setHomeModalOpen }) => {
+const LoginModal = ({ setHomeModalOpen }) => {
   //Extremely unsure how to do this without using document selector. How do I target the whole body
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -49,9 +50,13 @@ const LoginModal = ({ homeModalOpen, setHomeModalOpen }) => {
           <img onClick={closeModal} src={require("../../assets/cross.png")} />
         </div>
         <div className="modalWrapper__modalBox__loginOptions">
-          <div>
-            <button>Continue with Google</button>
-          </div>
+          <LoginMethod loginOption={"Email and Password"} />
+          <LoginMethod
+            loginOption={"Continue with Google"}
+            icon={require("../../assets/logos/google.png")}
+          />
+          <LoginMethod loginOption={"Login with Facebook"} />
+          <LoginMethod loginOption={"Sign Up"} />
         </div>
       </div>
     </div>
