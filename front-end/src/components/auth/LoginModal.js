@@ -39,7 +39,7 @@ const LoginModal = ({ setHomeModalOpen }) => {
         <div className="modalWrapper__modalBox__headingWrapper">
           <h3>Get Started</h3>
         </div>
-        <div>
+        <div className="modalWrapper__modalBox__modalTextContent">
           <p>
             By clicking Login, you agree to our <a>Terms.</a> Learn how we
             process your data in our <a>Privacy Policy</a> and{" "}

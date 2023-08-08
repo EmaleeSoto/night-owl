@@ -1,8 +1,8 @@
 const express = require("express");
-const bars = express.Router();
+const yelpVenues = express.Router();
 const axios = require("axios");
 
-bars.get("/:id", async (req, res) => {
+yelpVenues.get("/:id", async (req, res) => {
   const yelpResponse = await axios.get(
     `https://api.yelp.com/v3/businesses/${req.params.id}`,
     {
@@ -16,7 +16,7 @@ bars.get("/:id", async (req, res) => {
   res.send(yelpResponse.data);
 });
 
-bars.get("/reviews/:id", async (req, res) => {
+yelpVenues.get("/reviews/:id", async (req, res) => {
   const yelpResponse = await axios.get(
     `https://api.yelp.com/v3/businesses/${req.params.id}/reviews?limit=10&sort_by=yelp_sort`,
     {
@@ -30,4 +30,4 @@ bars.get("/reviews/:id", async (req, res) => {
   res.send(yelpResponse.data);
 });
 
-module.exports = bars;
+module.exports = yelpVenues;

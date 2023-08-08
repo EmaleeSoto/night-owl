@@ -10,9 +10,9 @@ export default function Favorites({ user, Favorite }) {
 
   useEffect(() => {
     axios
-      .get(`${API}/userestablishments/${user.id}`)
+      .get(`${API}/uservenues/${user.id}`)
       .then((response) => {
-        setLikedVenues([...response.data]);
+        setLikedVenues([...response.data.venues]);
       })
       .catch();
     console.log("LIKED PLACES:", likedVenues);

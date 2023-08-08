@@ -10,50 +10,50 @@ const {
 
 // INDEX SHOW ALL ALCOHOL
 alcohol.get("/", async (req, res) => {
-  res.json({ data: await getAllAlcohols() });
+  res.json({ alcohols: await getAllAlcohols() });
 });
 
 // SHOW BY ID
 alcohol.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const alcohol = await getAlcohol(id);
-  if (alcohol.id) {
-    res.json({ success: true, data: alcohol });
+  const oneAlcohol = await getAlcohol(id);
+  if (oneAlcohol.id) {
+    res.json({ success: true, alcohol: oneAlcohol });
   } else {
-    res.status(404).json({ success: false, data: "not found" });
+    res.status(404).json({ success: false, alcohol: "not found" });
   }
 });
 
 // SHOW BY CATEGORY
 alcohol.get("/category/:category", async (req, res) => {
   const { category } = req.params;
-  const alcohols = await getAlcoholByCategory(category);
-  if (alcohols) {
-    res.json({ success: true, data: alcohols });
+  const allAlcohols = await getAlcoholByCategory(category);
+  if (allAlcohols) {
+    res.json({ success: true, alcohols: allAlcohols });
   } else {
-    res.status(404).json({ success: false, data: "not found" });
+    res.status(404).json({ success: false, alcohols: "not found" });
   }
 });
 
 // SHOW BY TYPE
 alcohol.get("/type/:type", async (req, res) => {
   const { type } = req.params;
-  const alcohols = await getAlcoholByType(type);
-  if (alcohols) {
-    res.json({ success: true, data: alcohols });
+  const allAlcohols = await getAlcoholByType(type);
+  if (allAlcohols) {
+    res.json({ success: true, alcohols: allAlcohols });
   } else {
-    res.status(404).json({ success: false, data: "not found" });
+    res.status(404).json({ success: false, alcohols: "not found" });
   }
 });
 
 // SHOW BY FLAVOR
 alcohol.get("/flavors/:flavor", async (req, res) => {
   const { flavor } = req.params;
-  const alcohols = await getAlcoholByFlavor(flavor);
-  if (alcohols) {
-    res.json({ success: true, data: alcohols });
+  const allAlcohols = await getAlcoholByFlavor(flavor);
+  if (allAlcohols[0]) {
+    res.json({ success: true, alcohols: allAlcohols });
   } else {
-    res.status(404).json({ success: false, data: "not found" });
+    res.status(404).json({ success: false, alcohols: "not found" });
   }
 });
 

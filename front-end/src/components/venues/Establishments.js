@@ -9,7 +9,7 @@ import "./Establishments.css";
 const API = process.env.REACT_APP_API_URL;
 
 const Establishments = ({ user }) => {
-  const [preferenceList, setPreferenceList] = useState([]);
+  const [venueList, setVenueList] = useState([]);
   const [likes, setLikes] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Establishments = ({ user }) => {
     axios
       .get(`${API}/users/${user.id}/preferences`)
       .then((response) => {
-        setPreferenceList(response.data);
+        setVenueList(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -26,7 +26,7 @@ const Establishments = ({ user }) => {
   }, [user]);
 
   const handleLikes = () => {
-    const likedSpot = setLikes([`${preferenceList.name}`]);
+    const likedSpot = setLikes([`${venueList.name}`]);
     return setLikes(likedSpot);
   };
 
@@ -41,13 +41,8 @@ const Establishments = ({ user }) => {
         Here are some great places to try.
       </h1>
       <section className="establishment-grid" data-aos="fade-up">
-        {preferenceList.map((preference) => {
-          return (
-            <OneEstablishment
-              preference={preference}
-              handleLikes={handleLikes}
-            />
-          );
+        {venueList.map((venue) => {
+          return <OneEstablishment venue={venue} handleLikes={handleLikes} />;
         })}
       </section>
     </div>

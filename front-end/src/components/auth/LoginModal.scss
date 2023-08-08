@@ -33,18 +33,22 @@
         transform: translate(-50%, -50%);
         z-index: 1;
 
-        p {
-            font-size: smaller;
-            width: 90%;
-            margin: auto;
-            color: $snow_white;
-        }
+        &__modalTextContent {
 
-        a {
-            text-decoration: underline !important;
-            color: $rose_quartz !important;
-            font-weight: bold;
-            cursor: pointer;
+            p {
+                font-size: smaller;
+                width: 90%;
+                margin: auto;
+                color: $snow_white;
+            }
+    
+            a {
+                text-decoration: underline !important;
+                color: $rose_quartz !important;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            
         }
 
         &__modalImage {

@@ -58,6 +58,7 @@ const App = () => {
         // ...
       });
   };
+
   const checkUserVerification = () => {
     const loggedInUser = auth.currentUser;
     if (loggedInUser !== null) {
@@ -66,6 +67,7 @@ const App = () => {
       setUserEmail(loggedInUser.email);
     }
   };
+
   const sendVerification = () => {
     sendEmailVerification(auth.currentUser).then(() => {
       alert("A verification email has been sent to you!");
@@ -89,6 +91,7 @@ const App = () => {
         });
     }
   };
+
   useEffect(() => {
     if (loggedIn) {
       axios

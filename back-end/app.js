@@ -4,7 +4,7 @@ const cors = require("cors");
 const usersController = require("./controllers/usersController");
 const userVenuesController = require("./controllers/userVenuesController");
 const alcoholController = require("./controllers/alcoholController");
-const barsController = require("./controllers/barsController");
+const yelpVenuesController = require("./controllers/yelpVenuesController");
 
 // CONFIGURATION
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use("/users", usersController);
 app.use("/uservenues", userVenuesController);
 app.use("/alcohols", alcoholController);
-app.use("/bars", barsController);
+app.use("/yelpvenues", yelpVenuesController);
 
 // ROUTES
 app.get("/", (req, res) => {

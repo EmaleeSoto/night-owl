@@ -8,7 +8,7 @@ const getAllUserVenues = async () => {
   }
 };
 
-const getVenueByUserId = async (id) => {
+const getVenuesByUserId = async (id) => {
   try {
     return await db.any("SELECT * FROM user_venues WHERE user_uid=$1", id);
   } catch (error) {
@@ -37,7 +37,7 @@ const deleteUserVenue = async (id) => {
 
 module.exports = {
   getAllUserVenues,
-  getVenueByUserId,
+  getVenuesByUserId,
   createUserVenue,
   deleteUserVenue,
 };

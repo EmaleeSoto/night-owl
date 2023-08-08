@@ -7,7 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const API = process.env.REACT_APP_API_URL;
-const YELP_API = process.env.REACT_APP_YELP_API_URL;
+// const API = process.env.REACT_APP_API_URL;
 
 //TODO: SHOW PAGE WORKS, FIX ADDRES1 ERROR (BEING UNDEFINED)
 //SOMETIMES ADDRESS1 IS UNDEFINED AND CRASHES APP DESPITE CONDITIONAL
@@ -21,16 +21,17 @@ export default function ShowEstablishment({ user }) {
   useEffect(() => {
     Aos.init({ duration: 2000 });
     axios
-      .get(`${YELP_API}/${id}`)
+      .get(`${API}/yelpvenues/${id}`)
       .then((res) => {
         setEstablishment(res.data);
+        console.log("YELP CHECK", res.data);
       })
       .catch(() => {
         navigate("/not found");
       });
 
     axios
-      .get(`${YELP_API}/reviews/${id}`)
+      .get(`${API}/yelpvenues/reviews/${id}`)
       .then((res) => {
         setVenueReviews(res.data.reviews);
       })
@@ -40,9 +41,9 @@ export default function ShowEstablishment({ user }) {
   }, [id, navigate]);
 
   const militaryToUSD = (time) => {
-    let hrs = String(time).substring(0, 2);
-    let postScript = Number(hrs) > 12 ? "PM" : "AM";
-    let mins = String(time).substring(2);
+    const hrs = String(time).substring(0, 2);
+    const postScript = Number(hrs) > 12 ? "PM" : "AM";
+    const mins = String(time).substring(2);
     return `${postScript === "PM" ? hrs - 12 : hrs}:${mins} ${postScript}`;
   };
 
@@ -50,7 +51,7 @@ export default function ShowEstablishment({ user }) {
     event.preventDefault();
     setLike(true);
     axios
-      .post(`${API}/userestablishments/addfavorite`, {
+      .post(`${API}/uservenues/addfavorite`, {
         user_uid: user.id,
         yelp_id: establishment.id,
         name: establishment.name,

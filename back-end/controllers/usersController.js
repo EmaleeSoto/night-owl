@@ -12,7 +12,7 @@ const {
 
 // INDEX SHOW ALL USERS
 users.get("/", async (req, res) => {
-  res.json({ data: await getAllUsers() });
+  res.json({ allUsers: await getAllUsers() });
 });
 
 // SHOW A USER BY USER ID
@@ -20,9 +20,9 @@ users.get("/:id", async (req, res) => {
   const { id } = req.params;
   const user = await getUser(id);
   if (user.id) {
-    res.json({ success: true, data: user });
+    res.json({ success: true, oneUser: user });
   } else {
-    res.status(404).json({ success: false, data: "not found" });
+    res.status(404).json({ success: false, oneUser: "not found" });
   }
 });
 
@@ -31,16 +31,16 @@ users.get("/firebase/:id", async (req, res) => {
   const { id } = req.params;
   const user = await getUserbyFirebase(id);
   if (user.id) {
-    res.json({ success: true, data: user });
+    res.json({ success: true, oneUser: user });
   } else {
-    res.status(404).json({ success: false, data: "not found" });
+    res.status(404).json({ success: false, oneUser: "not found" });
   }
 });
 
 // SHOW VENUES BY USER PREFERRED CATEGORIES
 users.get("/:id/preferences", async (req, res) => {
   const myUser = await getUser(req.params.id);
-  const venuesByUserCategories = [];
+  let venuesByUserCategories = [];
   const categories = myUser.atmosphere.split(", ");
   for (const category of categories) {
     const yelpVenuesByCategory = await axios
@@ -68,11 +68,11 @@ users.get("/:id/preferences", async (req, res) => {
 users.post("/", async (req, res) => {
   try {
     const user = await createUser(req.body);
-    res.json({ success: true, data: user });
+    res.json({ success: true, oneUser: user });
   } catch (error) {
     res
       .status(400)
-      .json({ success: false, data: "server cannot process request" });
+      .json({ success: false, oneUser: "server cannot process request" });
   }
 });
 
@@ -80,7 +80,7 @@ users.post("/", async (req, res) => {
 users.put("/:id", async (req, res) => {
   try {
     const user = await updateUser(req.params.id, req.body);
-    res.json({ success: true, data: user });
+    res.json({ success: true, oneUser: user });
   } catch (error) {
     res.status(400).json({ error });
   }
@@ -92,13 +92,13 @@ users.delete("/:id", async (req, res) => {
   const deletedUser = await deleteUser(id);
   if (deletedUser) {
     if (deletedUser.id) {
-      res.status(200).json({ success: true, data: deletedUser });
+      res.status(200).json({ success: true, oneUser: deletedUser });
     } else {
-      res.status(404).json({ success: false, data: "User not found" });
+      res.status(404).json({ success: false, oneUser: "User not found" });
     }
   } else {
     console.error(deletedUser);
-    res.status(500).json({ success: false, data: "server error" });
+    res.status(500).json({ success: false, oneUser: "server error" });
   }
 });
 
