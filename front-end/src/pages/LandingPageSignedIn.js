@@ -24,14 +24,17 @@ const LandingPageSignedIn = ({ user }) => {
   return (
     <div>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <h1 className="landing-container">Loading...</h1>
       ) : (
         <div className="landing-container">
           <h1>Hi {userData?.name}, what are your plans tonight?</h1>
           <div className="image-container">
             <div>
               <Link to={`/establishments`}>
-                <img src="./images/find-bars.png" alt="Find Bars and Clubs" />
+                <img
+                  src={require("../assets/stock_images/venue.jpeg")}
+                  alt="Find Bars and Clubs"
+                />
               </Link>
               <br></br>
               <Link to={`/establishments`}>
@@ -40,7 +43,10 @@ const LandingPageSignedIn = ({ user }) => {
             </div>
             <div>
               <Link to="/alcohols/categories">
-                <img src="./images/find-drinks.png" alt="Find Drinks" />
+                <img
+                  src={require("../assets/stock_images/alcohols.jpeg")}
+                  alt="Find Drinks"
+                />
               </Link>
               <br></br>
               {userData?.age < 21 ? (

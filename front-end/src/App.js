@@ -19,7 +19,6 @@ import DrinksByPrefs from "./components/beverages/DrinksByPrefs";
 import LandingPageSignedIn from "./pages/LandingPageSignedIn";
 import UserSignIn from "./components/auth/UserSignIn";
 import UserSignUp from "./components/auth/UserSignUp";
-import IndividualDrink from "./components/beverages/IndividualDrink";
 import DrinksCategories from "./components/beverages/DrinksCategories";
 import Establishments from "./components/venues/Establishments";
 import Favorites from "./components/user/Favorites";
@@ -187,7 +186,6 @@ const App = () => {
               />
             }
           />
-          <Route path="/alcohols/:id" element={<IndividualDrink />} />
           <Route
             path="/alcohols/categories"
             element={<DrinksCategories user={user} />}

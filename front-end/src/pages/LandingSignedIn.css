@@ -1,5 +1,6 @@
 .landing-container {
   text-align: center;
+  min-height: 50vh;
 }
 
 .image-container {
@@ -9,8 +10,10 @@
 }
 
 .image-container img {
-  width: 70%;
-  height: 80%;
+  width: 60%;
+  height: 90%;
+  border: 5px solid #090428;
+  border-radius: 20px;
 }
 
 @media (max-width: 585px) {
