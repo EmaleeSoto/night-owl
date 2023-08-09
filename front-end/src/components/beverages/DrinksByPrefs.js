@@ -10,12 +10,12 @@ export default function DrinksByPrefs({ user }) {
   const [userDrinks, setUserDrinks] = useState([]);
   useEffect(() => {
     Aos.init({ duration: 2000 });
-    let userFlavors = user.flavors?.split(", ");
+    const userFlavors = user.flavors?.split(", ");
     userFlavors?.map((flavor) => {
       axios
         .get(`${API}/alcohols/flavors/${flavor}`)
         .then((response) => {
-          setUserDrinks([...userDrinks, ...response.data]);
+          setUserDrinks([...userDrinks, ...response.data.alcohols]);
         })
         .catch((error) => {
           console.log(error);
@@ -31,7 +31,7 @@ export default function DrinksByPrefs({ user }) {
       <h1 className="drink-header">Try these!</h1>
       <div className="alcohol-list">
         {userDrinks?.map((drink, index) => {
-          return <Drink booze={drink} index={index} />;
+          return <Drink alcohol={drink} index={index} />;
         })}
       </div>
     </div>

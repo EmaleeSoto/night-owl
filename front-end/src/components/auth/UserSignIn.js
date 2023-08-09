@@ -23,7 +23,8 @@ export default function UserSignIn({ resetPassword }) {
     }
   };
 
-  const signIn = () => {
+  const signIn = (event) => {
+    event.preventDefault();
     signInWithEmailAndPassword(auth, profile.email, profile.password)
       .then((userCredential) => {
         // Action when user is signed in
@@ -37,6 +38,7 @@ export default function UserSignIn({ resetPassword }) {
         // ...
       })
       .catch((error) => {
+        console.log(profile.email, profile.password);
         const errorCode = error.code;
         console.log(errorCode);
 
@@ -53,7 +55,7 @@ export default function UserSignIn({ resetPassword }) {
   };
   return (
     <div className="signIn">
-      <div className="signIn__container">
+      <form className="signIn__container" onSubmit={signIn}>
         <h1 className="signIn_header">Let's get you logged in.</h1>
         <div className="signIn__inputLabelWrap">
           <label htmlFor="email">Email: </label>
@@ -81,13 +83,11 @@ export default function UserSignIn({ resetPassword }) {
           />
         </div>
         <br></br>
-        <button id="login" onClick={signIn}>
-          Log in
-        </button>
+        <input type="submit" id="login" value="Log In" />
         <h4 id="forgot-password" onClick={resetPassword}>
           Forgot Password?
         </h4>
-      </div>
+      </form>
     </div>
   );
 }

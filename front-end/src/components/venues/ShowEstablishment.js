@@ -7,7 +7,6 @@ import { Carousel } from "react-responsive-carousel";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const API = process.env.REACT_APP_API_URL;
-// const API = process.env.REACT_APP_API_URL;
 
 //TODO: SHOW PAGE WORKS, FIX ADDRES1 ERROR (BEING UNDEFINED)
 //SOMETIMES ADDRESS1 IS UNDEFINED AND CRASHES APP DESPITE CONDITIONAL

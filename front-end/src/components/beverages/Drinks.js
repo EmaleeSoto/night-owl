@@ -8,10 +8,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 const API = process.env.REACT_APP_API_URL;
 
-//import from backend
-
 const Drinks = () => {
-  const [booze, setBooze] = useState([]);
+  const [alcohol, setAlcohol] = useState([]);
   let { category } = useParams();
 
   useEffect(() => {
@@ -19,7 +17,7 @@ const Drinks = () => {
     axios
       .get(`${API}/alcohols/category/${category}`)
       .then((response) => {
-        setBooze(response.data);
+        setAlcohol(response.data.alcohols);
       })
       .catch((error) => {
         console.log(error);
@@ -35,8 +33,8 @@ const Drinks = () => {
         {category.charAt(0).toUpperCase() + category.slice(1)}
       </h1>
       <section className="alcohol-list">
-        {booze.map((booze, index) => {
-          return <Drink booze={booze} index={index} />;
+        {alcohol.map((alcohol, index) => {
+          return <Drink alcohol={alcohol} index={index} />;
         })}
       </section>
     </div>
