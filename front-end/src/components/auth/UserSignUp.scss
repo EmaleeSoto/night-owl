@@ -28,16 +28,17 @@
   }
 
   &__container {
-    border: 10px solid $noir;
-    border-radius: 15px;
-    background-color: $rose_quartz;
+    border: 5px solid $rose_quartz;
+    border-radius: 25px;
+    background-color: $noir;
     width: 30%;
     padding: 3%;
     margin: 3%;
+    color: $rose_quartz;
 
     &__loginSubmitInput {
-      width: 40%;
-      padding: 5px 20px;
+      text-align: center;
+      padding: 10px 30px;
       background-color: $snow_white;
       color: $cherry;
       border-radius: 20px;
