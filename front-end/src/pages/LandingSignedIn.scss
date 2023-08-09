@@ -1,0 +1,63 @@
+@import '../assets/utils/_colors.scss';
+
+.loadingContainer {
+  min-height: 50vh;
+}
+
+.landingContainer {
+  text-align: center;
+
+  &__imageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    img {
+      width: 55%;
+      height: 85%;
+      border: 5px solid $noir;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      border: 5px solid $rose_quartz;
+    }
+
+    &__exploreButton {
+      background-color: $snow_white;
+      font-weight: bolder;
+      font-size: large;
+      color: #CD2D64;
+      cursor: pointer;
+      border: 2px solid $noir;
+      border-radius: 20px;
+      padding: 5px 20px;
+
+    }
+
+    &__exploreButton:hover {
+      background-color: $dim_snow_white;
+    }
+
+  }
+}
+
+@media (max-width: 585px) {
+  .image-container img {
+    margin-top: 2%;
+
+  }
+  .image-container a {
+    margin-bottom: 20px;
+  }
+  .image-container button {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 684px) {
+  .image-container {
+    grid-template-columns: 1fr
+  
+  }
+}

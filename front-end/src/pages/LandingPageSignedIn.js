@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./LandingSignedIn.css";
+import "./LandingSignedIn.scss";
 
 const LandingPageSignedIn = ({ user }) => {
   const [userData, setUserData] = useState(null);
@@ -24,11 +24,11 @@ const LandingPageSignedIn = ({ user }) => {
   return (
     <div>
       {isLoading ? (
-        <h1 className="landing-container">Loading...</h1>
+        <h1 className="loadingContainer">Loading...</h1>
       ) : (
-        <div className="landing-container">
+        <div className="landingContainer">
           <h1>Hi {userData?.name}, what are your plans tonight?</h1>
-          <div className="image-container">
+          <div className="landingContainer__imageContainer">
             <div>
               <Link to={`/establishments`}>
                 <img
@@ -38,7 +38,9 @@ const LandingPageSignedIn = ({ user }) => {
               </Link>
               <br></br>
               <Link to={`/establishments`}>
-                <button className="large-button">Find Bars and Clubs</button>
+                <button className="landingContainer__imageContainer__exploreButton">
+                  Find Bars and Clubs
+                </button>
               </Link>
             </div>
             <div>
@@ -55,7 +57,9 @@ const LandingPageSignedIn = ({ user }) => {
                 </h2>
               ) : (
                 <Link to="/alcohols/categories">
-                  <button className="large-button">Find Drinks</button>
+                  <button className="landingContainer__imageContainer__exploreButton">
+                    Find Drinks
+                  </button>
                 </Link>
               )}
             </div>
