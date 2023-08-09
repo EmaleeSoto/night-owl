@@ -1,22 +1,20 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import "./LandingSignedIn.scss";
 
 const LandingPageSignedIn = ({ user }) => {
   const [userData, setUserData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect with a dependency on the 'user' prop
   useEffect(() => {
-    // Simulate a delay to showcase the effect (you can replace this with actual data fetching)
+    Aos.init({ duration: 2000 });
     const delay = setTimeout(() => {
-      // When the 'user' prop changes, update the component state
       setUserData(user);
-      setIsLoading(false); // Mark loading as false after receiving the user data
-    }, 1000); // 1 second delay (adjust this according to your needs)
-
-    // Cleanup function to clear the timeout when the component unmounts or when 'user' changes
+      setIsLoading(false);
+    }, 1000);
     return () => clearTimeout(delay);
   }, [user]);
 
@@ -26,7 +24,7 @@ const LandingPageSignedIn = ({ user }) => {
       {isLoading ? (
         <h1 className="loadingContainer">Loading...</h1>
       ) : (
-        <div className="landingContainer">
+        <div className="landingContainer" data-aos="fade-up">
           <h1>Hi {userData?.name}, what are your plans tonight?</h1>
           <div className="landingContainer__imageContainer">
             <div>
