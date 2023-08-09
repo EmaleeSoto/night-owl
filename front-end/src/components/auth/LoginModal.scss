@@ -84,6 +84,20 @@
                 transform: scale(1.1);
             }
         }
+
     }
+
+
+    @media screen and (max-width: 760px) { /* Adjust the breakpoint as needed */
+        &__modalBox {
+            min-width: 70%;
+        }
+      }
+
+    @media screen and (max-width: 968px) { /* Adjust the breakpoint as needed */
+        &__modalBox {
+            min-width: 60%;
+        }
+      }
 
 }

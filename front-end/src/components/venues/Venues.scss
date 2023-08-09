@@ -1,0 +1,80 @@
+@import '../../assets/utils/_colors.scss';
+
+.venuesWrapper {
+  min-height: 70vh;
+
+  &__header {
+    text-align: center;
+    color: $rose_quartz;
+  }
+
+  &__navToDrinksButton {
+    position: absolute;
+    left: 10%;
+  }
+
+  &__venuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin: 2em 2em;
+    justify-content: center;
+    justify-items: center;
+
+    a {
+      text-decoration: none;
+    }
+
+  }
+
+
+@media (min-width: 687px) {
+  &__navToDrinksButton {
+    position: absolute;
+    top: 15%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 799px) {
+  &__navToDrinksButton {
+    left: 0;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 874px) {
+  &__navToDrinksButton {
+    left: 1%;
+  }
+}
+
+@media (min-width: 875px) and (max-width: 980px) {
+    &__navToDrinksButton {
+      left: 5%;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1439px) {
+  &__venuesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  &__venuesGrid  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  &__venuesGrid  {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 2em 0.5em;
+  }
+  &__navToDrinksButton {
+    position: relative;
+    margin-left: 0%;
+  }
+}
+
+}
+

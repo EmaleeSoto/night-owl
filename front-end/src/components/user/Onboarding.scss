@@ -1,14 +1,5 @@
 @import '../../assets/utils/_colors.scss';
 
-// .onboarding__formContainer__show__clicked {
-//   background-color: $rose_quartz;
-//   color: $noir;
-//   border: 2px solid $noir;
-//   border-radius: 25px;
-//   pad: 3px;
-//   font-size: large;
-// }
-
 .onboarding {
   text-align: center;
   margin-left: 15%;
@@ -30,26 +21,38 @@
       margin: auto;
       margin-top: 3%;
       margin-bottom: 3%;
-      width: fit-content;
-      padding: 3%;
+      width: 40%;
+      padding: 5%;
 
       &__inputLabelWrap {
         display: flex;
-        justify-content: center;
-  
+        align-items: center;
+        margin-bottom: 3%;
+        
         label {
-          min-width: 25%;
+          flex: 1;
           font-weight: bold;
+          text-align: center;
+          padding: 5px;
+          overflow: visible;
         }
         
         input {
           border-radius: 5px;
-          width: 50%;
-          margin-left: 7%;
-          margin-right: 7%;
+          width: 35%;
+          height: 30px;
         }
-
       }
+
+      &__description {
+        font-weight: bold;
+        font-size: large;
+      }
+
+      #personality {
+        margin: 15px 0px;
+      }
+      
 
       &__radio {
         display: flex;

@@ -15,20 +15,21 @@
         border: 1px solid $noir;
         border-radius: 25px;
         height: 10%;
+        cursor: pointer;
 
 
         &__loginLink {
-            width: 100%;
+            width: 90%;
             text-decoration: none;
             color: $noir;
     
             &__contentWrapper {
                 display: flex;
-                width: 60%;
                 margin: auto;
                 justify-content: center;
                 flex-direction: row;
                 align-items: center;
+                width: 90%;
 
                 img {
                     width: 35px;
@@ -36,7 +37,7 @@
                 }
 
                 h5 {
-                    min-width: 100%;
+                    min-width: 80%;
                     font-size: larger;
                     line-height: 0.1;
                 }
@@ -44,6 +45,4 @@
         }
 
     }
-
-
 }

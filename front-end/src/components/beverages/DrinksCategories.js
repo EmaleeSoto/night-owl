@@ -107,7 +107,7 @@ const DrinksCategories = ({ user }) => {
 
   return (
     <div>
-      <Link to="/establishments">
+      <Link to="/venues">
         <button id="index-button">Find Bars</button>
       </Link>
       <div className="alcohols-heading-wrapper">

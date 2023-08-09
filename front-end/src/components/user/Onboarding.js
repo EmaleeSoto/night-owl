@@ -264,11 +264,14 @@ export default function Onboarding({ userFirebaseId, callback }) {
           }
         >
           <h1 className="onboarding__formContainer__header">
-            Great! Let's keep going.
+            Let's get to know you
           </h1>
           <section className="onboarding__formContainer__contentWrapper">
-            <label htmlFor="personality">
-              How would you describe yourself?
+            <label
+              className="onboarding__formContainer__contentWrapper__description"
+              htmlFor="personality"
+            >
+              Which trait best describes you?
             </label>
             <br />
             <select id="personality" onChange={handleTextChange}>
@@ -333,7 +336,9 @@ export default function Onboarding({ userFirebaseId, callback }) {
               />
             </div>
           </section>
-          <h3>Pick your venue vibes</h3>
+          <h2 className="onboarding__formContainer__venueVibes">
+            Pick your venue vibes
+          </h2>
           <br />
           <div className="onboarding__formContainer__buttonWrapper">
             <button
@@ -430,7 +435,7 @@ export default function Onboarding({ userFirebaseId, callback }) {
               onClick={handleAtmosphere}
               value="coffeeshops"
             >
-              Coffee
+              Coffee & Cafe
             </button>
             <button
               className="onboarding__formContainer__buttonWrapper__atmosphere"

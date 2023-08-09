@@ -29,14 +29,14 @@ const LandingPageSignedIn = ({ user }) => {
           </h1>
           <div className="landingContainer__imageContainer">
             <div>
-              <Link to={`/establishments`}>
+              <Link to={`/venues`}>
                 <img
                   src={require("../assets/stock_images/venue.jpeg")}
                   alt="Find Bars and Clubs"
                 />
               </Link>
               <br></br>
-              <Link to={`/establishments`}>
+              <Link to={`/venues`}>
                 <button className="landingContainer__imageContainer__exploreButton">
                   Find Bars and Clubs
                 </button>

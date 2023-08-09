@@ -21,7 +21,7 @@ import LandingPageSignedIn from "./pages/LandingPageSignedIn";
 import UserSignIn from "./components/auth/UserSignIn";
 import UserSignUp from "./components/auth/UserSignUp";
 import DrinksCategories from "./components/beverages/DrinksCategories";
-import Establishments from "./components/venues/Establishments";
+import Venues from "./components/venues/Venues";
 import Favorites from "./components/user/Favorites";
 import EditProfile from "./components/auth/EditProfile";
 import ShowEstablishment from "./components/venues/ShowEstablishment";
@@ -152,10 +152,7 @@ const App = () => {
               }
             />
           )}
-          <Route
-            path="/establishments"
-            element={<Establishments user={user} />}
-          />
+          <Route path="/venues" element={<Venues user={user} />} />
           <Route
             path="/establishment/:id"
             element={<ShowEstablishment user={user} />}

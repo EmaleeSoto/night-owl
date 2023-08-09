@@ -1,0 +1,34 @@
+@import '../../assets/utils/_colors.scss';
+
+.oneVenue {
+    cursor: pointer;
+    width: 350px;
+    color: $rose_quartz;
+    text-align: center;
+    border: 3px solid $cherry;
+    // box-shadow: 4px 4px 4px $cherry;
+    border-radius: 15px;
+    padding: 5px;
+
+
+    &__venueName {
+      font-size: 30px;
+      color: $cherry;
+    }
+
+    &__venueImage {
+        height: 200px;
+        width: auto;
+        max-width: 250px;
+    }
+      
+  }
+  
+  
+  .establishment-name:hover {
+    text-decoration: underline;
+  }
+
+  .oneVenue:hover {
+    border: 3px solid $rose_quartz;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import OneEstablishment from "./OneEstablishment";
+import OneVenue from "./OneVenue";
 import axios from "axios";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import "./Establishments.css";
+import "./Venues.scss";
 const API = process.env.REACT_APP_API_URL;
 
-const Establishments = ({ user }) => {
+const Venues = ({ user }) => {
   const [venueList, setVenueList] = useState([]);
   const [likes, setLikes] = useState([]);
 
@@ -31,22 +31,22 @@ const Establishments = ({ user }) => {
   };
 
   return (
-    <div className="establishmentWrapper">
+    <div className="venuesWrapper">
       {user.age >= 21 ? (
         <Link to="/alcohols/categories">
-          <button id="index-button">Find Alcohol</button>
+          <button className="venuesWrapper__navToDrinksButton">
+            Find Alcohol
+          </button>
         </Link>
       ) : null}
-      <h1 className="establishment-header">
-        Here are some great places to try.
-      </h1>
-      <section className="establishment-grid" data-aos="fade-up">
+      <h1 className="venuesWrapper__header">Recommended Venues for You</h1>
+      <section className="venuesWrapper__venuesGrid" data-aos="fade-up">
         {venueList.map((venue) => {
-          return <OneEstablishment venue={venue} handleLikes={handleLikes} />;
+          return <OneVenue venue={venue} handleLikes={handleLikes} />;
         })}
       </section>
     </div>
   );
 };
 
-export default Establishments;
+export default Venues;

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./OneVenue.scss";
 
 export default function OneEstablishment({ venue }) {
   const array = [];
@@ -10,11 +11,15 @@ export default function OneEstablishment({ venue }) {
     return array.join(" | ");
   };
   return (
-    <div className="one-establishment" key={venue.id}>
+    <div className="oneVenue" key={venue.id}>
       <div>
         <Link to={`/establishment/${venue.id}`}>
-          <h1 className="establishment-name">{venue.name}</h1>
-          <img id="index-image" src={venue.image_url} alt={venue.name} />
+          <h1 className="oneVenue__venueName">{venue.name}</h1>
+          <img
+            className="oneVenue__venueImage"
+            src={venue.image_url}
+            alt={venue.name}
+          />
         </Link>
         <p>
           {venue.location.display_address[0]}
