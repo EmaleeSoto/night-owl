@@ -2,6 +2,7 @@
 
 .aboutSection {
   color: $snow_white;
+  z-index: 0 !important;
 
   &__header {
     text-align: center;

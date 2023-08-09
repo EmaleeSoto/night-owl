@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import LoginMethod from "../LoginMethod";
+import LoginMethod from "./LoginMethod";
 import "./LoginModal.scss";
 
 const LoginModal = ({ setHomeModalOpen }) => {

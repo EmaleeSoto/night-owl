@@ -10,7 +10,7 @@ import {
   deleteUser,
 } from "firebase/auth";
 import Home from "./pages/Home";
-import Footer from "./pages/Footer";
+import Footer from "./components/Footer";
 import About from "./pages/About";
 import LoginModal from "./components/auth/LoginModal";
 import Onboarding from "./components/user/Onboarding";
