@@ -16,15 +16,6 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified, openModal }) => {
         </div>
       </Link>
       <ul>
-        {loggedIn && (
-          <li>
-            <div>
-              <Link className="nav__link" to={loggedIn ? "/myhome" : "/"}>
-                "My Home"
-              </Link>
-            </div>
-          </li>
-        )}
         <li className="nav__dropdown">
           <div>
             <Link className="nav__link">Safety</Link>
