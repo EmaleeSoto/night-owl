@@ -33,15 +33,19 @@
   &__dropdownMenu {
     display: none;
     position: absolute;
+    width: 300px;
+    top: 100%;
+    left: 0; 
     text-align: left;
-    background-color: $midnight_plum;
+    overflow: visible;
+    background-color: $noir;
     padding: 15px;
     font-size: smaller;
 
     li {
       margin-bottom: 5px;
-      width: 400px;
-      padding-top: 20px; 
+      // width: 300px;
+      padding-top: 15px; 
     }
     
   }
@@ -97,10 +101,6 @@
     }
     
   }
-
-  // &__show {
-  //   display: inline-block;
-  // }
 
   &__hide {
     display: none;

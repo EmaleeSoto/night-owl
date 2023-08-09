@@ -31,6 +31,16 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified, openModal }) => {
                 Safety Tips
               </Link>
             </li>
+            <li>
+              <Link className="nav__link" to="/">
+                Safety & Policy
+              </Link>
+            </li>
+            <li>
+              <Link className="nav__link" to="/">
+                Security
+              </Link>
+            </li>
           </ul>
         </li>
         <li>
