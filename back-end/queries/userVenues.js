@@ -16,6 +16,17 @@ const getVenuesByUserId = async (id) => {
   }
 };
 
+const getOneVenueByUserId = async (id, yelp_id) => {
+  try {
+    return await db.one(
+      "SELECT * FROM user_venues WHERE user_uid=$1 AND yelp_id=$2",
+      [id, yelp_id]
+    );
+  } catch (error) {
+    return error;
+  }
+};
+
 const createUserVenue = async ({ user_uid, yelp_id, name, image }) => {
   try {
     return await db.one(
@@ -38,6 +49,7 @@ const deleteUserVenue = async (id) => {
 module.exports = {
   getAllUserVenues,
   getVenuesByUserId,
+  getOneVenueByUserId,
   createUserVenue,
   deleteUserVenue,
 };

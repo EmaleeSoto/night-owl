@@ -3,6 +3,7 @@ const userVenues = express.Router();
 const {
   getAllUserVenues,
   getVenuesByUserId,
+  getOneVenueByUserId,
   createUserVenue,
   deleteUserVenue,
 } = require("../queries/userVenues");
@@ -23,6 +24,13 @@ userVenues.get("/:userid", async (req, res) => {
 //https://api.yelp.com/v3/businesses
 userVenues.get("/favorites/:yelpid", async (req, res) => {
   res.json({ venues: await getAllUserVenues() });
+});
+
+userVenues.get("/isfavorite/:id/:yelp_id", async (req, res) => {
+  const { id, yelp_id } = req.params;
+  res.json({
+    favoriteVenue: await getOneVenueByUserId(id, yelp_id),
+  });
 });
 
 // ADD NEW FAVORITE VENUE
