@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Onboarding.css";
+import "./Onboarding.scss";
 const API = process.env.REACT_APP_API_URL;
 
 //TODO: LET FLAVORS HAVE MULTIPLE INPUTS
@@ -42,19 +42,39 @@ export default function Onboarding({ userFirebaseId, callback }) {
       });
   };
 
+  const calculateAge = (birthdate) => {
+    const birthDateObj = new Date(birthdate);
+    const currentDate = new Date();
+    const years = currentDate.getFullYear() - birthDateObj.getFullYear();
+
+    if (
+      currentDate.getMonth() < birthDateObj.getMonth() ||
+      (currentDate.getMonth() === birthDateObj.getMonth() &&
+        currentDate.getDate() < birthDateObj.getDate())
+    ) {
+      return years - 1;
+    }
+
+    return years;
+  };
+
   const handleTextChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
   };
 
   const handleAgeChange = (event) => {
-    setUser({ ...user, [event.target.id]: Number(event.target.value) });
+    const usersAge = calculateAge(event.target.value);
+    setUser({ ...user, [event.target.id]: Number(usersAge) });
   };
 
   const handleAtmosphere = (event) => {
     event.preventDefault();
-    event.target.className === "clicked"
-      ? (event.target.className = "not-clicked")
-      : (event.target.className = "clicked");
+    event.target.className ===
+    "onboarding__formContainer__buttonWrapper__clicked"
+      ? (event.target.className =
+          "onboarding__formContainer__buttonWrapper__notClicked")
+      : (event.target.className =
+          "onboarding__formContainer__buttonWrapper__clicked");
     if (atmospheres.indexOf(event.target.value) > 0) {
       atmospheres.splice(atmospheres.indexOf(event.target.value), 1);
       setAtmospheres(atmospheres);
@@ -64,9 +84,9 @@ export default function Onboarding({ userFirebaseId, callback }) {
   };
 
   const handleFlavorsAdding = (event) => {
-    let flavorsString = user.flavors;
+    const flavorsString = user.flavors;
     if (user.flavors !== undefined) {
-      let newArray = user.flavors.split(", ");
+      const newArray = user.flavors.split(", ");
       console.log(newArray);
       if (newArray.indexOf(event.target.value) >= 0) {
         newArray.splice(newArray.indexOf(event.target.value), 1);
@@ -75,9 +95,8 @@ export default function Onboarding({ userFirebaseId, callback }) {
       } else {
         setUser({
           ...user,
-          flavors: flavorsString + ", " + event.target.value,
+          flavors: `${flavorsString}, ` + event.target.value,
         });
-        console.log("ADD: ", user.flavors);
       }
     } else {
       setUser({
@@ -149,11 +168,19 @@ export default function Onboarding({ userFirebaseId, callback }) {
   //TODO: Add age validity check
   return (
     <div className="onboarding">
-      <form onSubmit={handleSubmit}>
-        <div id={!displayNextForm ? "show" : "hidden"}>
-          <h1 className="onboarding-header">Let's get to know you better.</h1>
-          <section className="info-wrap-onboarding">
-            <div className="input-label-wrap-onboarding">
+      <form className="onboarding__formContainer" onSubmit={handleSubmit}>
+        <div
+          className={
+            !displayNextForm
+              ? "onboarding__formContainer__show"
+              : "onboarding__formContainer__hidden"
+          }
+        >
+          <h1 className="onboarding__formContainer__header">
+            Let's get to know you better.
+          </h1>
+          <section className="onboarding__formContainer__contentWrapper">
+            <div className="onboarding__formContainer__contentWrapper__inputLabelWrap">
               <label htmlFor="name">What's your name? </label>
               <input
                 id="name"
@@ -164,74 +191,86 @@ export default function Onboarding({ userFirebaseId, callback }) {
               />
             </div>
             <br />
-            <div className="input-label-wrap-onboarding">
+            <div className="onboarding__formContainer__contentWrapper__inputLabelWrap">
               <label htmlFor="age">Age? </label>
               <input
                 id="age"
                 name="age"
-                type="number" //TODO: Change to calendar and calculate age later
+                type="date" //TODO: Change to calendar and calculate age later
                 onChange={handleAgeChange}
                 autoComplete="off"
                 novalidate
               />
             </div>
             <br />
+            <h3>What is your gender identity?</h3>
+            <div className="onboarding__formContainer__contentWrapper__radio">
+              <label htmlFor="male">Male</label>
+              <input
+                id="gender"
+                type="radio"
+                name="gender"
+                onChange={handleTextChange}
+                value="Male"
+              />
+            </div>
+            <div className="onboarding__formContainer__contentWrapper__radio">
+              <label htmlFor="female">Female</label>
+              <input
+                id="gender"
+                type="radio"
+                name="gender"
+                onChange={handleTextChange}
+                value="Female"
+              />
+            </div>
+            <div className="onboarding__formContainer__contentWrapper__radio">
+              <label htmlFor="other">Other</label>
+              <input
+                id="gender"
+                type="radio"
+                name="gender"
+                onChange={handleTextChange}
+                value="Other"
+              />
+            </div>
             <br />
-            <label className="onboarding-label">
-              What is your gender identity?
-            </label>
-            <br />
-            <label htmlFor="male">Male</label>
-            <input
-              id="gender"
-              type="radio"
-              name="gender"
-              onChange={handleTextChange}
-              value="Male"
-            />
-            <br />
-            <label htmlFor="female">Female</label>
-            <input
-              id="gender"
-              type="radio"
-              name="gender"
-              onChange={handleTextChange}
-              value="Female"
-            />
-            <br />
-            <label htmlFor="other">Other</label>
-            <input
-              id="gender"
-              type="radio"
-              name="gender"
-              onChange={handleTextChange}
-              value="Other"
-            />
-            <br />
-            <br />
-            <label className="onboarding-label" htmlFor="zip_code">
-              Zip Code:{" "}
-            </label>
-            <input
-              id="zip_code"
-              type="text"
-              size="5"
-              maxLength="5"
-              onChange={handleTextChange}
-              autoComplete="off"
-              novalidate
-            />
+            <div className="onboarding__formContainer__contentWrapper__inputLabelWrap">
+              <label htmlFor="zip_code">Zip Code: </label>
+              <input
+                id="zip_code"
+                type="text"
+                size="5"
+                maxLength="5"
+                onChange={handleTextChange}
+                autoComplete="off"
+                novalidate
+              />
+            </div>
           </section>
-          <button type="button" onClick={goToNextForm}>
+          <button
+            className="onboarding__formContainer__nextButton"
+            type="button"
+            onClick={goToNextForm}
+          >
             Next
           </button>
         </div>
-        <div id={displayNextForm ? "show" : "hidden"}>
-          <h1 className="onboarding-header">Great! Let's keep going.</h1>
-          <section className="info-wrap-onboarding">
-            <label className="onboarding-label" htmlFor="personality">
+        <div
+          className={
+            displayNextForm
+              ? "onboarding__formContainer__show"
+              : "onboarding__formContainer__hidden"
+          }
+        >
+          <h1 className="onboarding__formContainer__header">
+            Great! Let's keep going.
+          </h1>
+          <section className="onboarding__formContainer__contentWrapper">
+            <label htmlFor="personality">
               How would you describe yourself?
             </label>
+            <br />
             <select id="personality" onChange={handleTextChange}>
               <option hidden disabled selected value>
                 -- select an option --
@@ -240,152 +279,222 @@ export default function Onboarding({ userFirebaseId, callback }) {
               <option value="Introvert">Introvert</option>
               <option value="Ambivert">Ambivert</option>
             </select>
-            <br></br>
-            <br />
-            <label className="onboarding-label">
-              Choose your favorite beverage flavors:{" "}
-            </label>
-            <br />
-            <label>Sweet</label>
-            <input
-              id="flavors"
-              type="checkbox"
-              onChange={handleFlavorsAdding}
-              name="flavor-1"
-              value="Sweet"
-            />
-            <br></br>
-            <label>Bitter</label>
-            <input
-              id="flavors"
-              type="checkbox"
-              onChange={handleFlavorsAdding}
-              name="flavor-2"
-              value="Bitter"
-            />
-            <br></br>
-            <label>Sour</label>
-            <input
-              id="flavors"
-              type="checkbox"
-              onChange={handleFlavorsAdding}
-              name="flavor-3"
-              value="Sour"
-            />
-            <br />
-            <label>Tangy</label>
-            <input
-              id="flavors"
-              type="checkbox"
-              onChange={handleFlavorsAdding}
-              name="flavor-4"
-              value="Tangy"
-            />
-            <br />
-            <label>Dry</label>
-            <input
-              id="flavors"
-              type="checkbox"
-              onChange={handleFlavorsAdding}
-              name="flavor-5"
-              value="Dry"
-            />
-            <br />
-          </section>
-          <label className="onboarding-label">Pick your venue vibes</label>
-          <br />
-          <br />
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="adultentertainment"
-          >
-            Adult Entertainment
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="stripclubs">
-            Strip Club
-          </button>
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="cocktailbars"
-          >
-            Cocktails
-          </button>
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="champagne_bars"
-          >
-            Fancy
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="divebars">
-            Casual and Social
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="gaybars">
-            LGBTQ+
-          </button>
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="hookah_bars"
-          >
-            Hookah
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="lounges">
-            Lounge
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="pubs">
-            Pubs
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="sakebars">
-            Sake
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="sportsbars">
-            Sports
-          </button>
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="coffeeshops"
-          >
-            Coffee
-          </button>
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="comedyclubs"
-          >
-            Comedy
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="danceclubs">
-            Dancing
-          </button>
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="jazzandblues"
-          >
-            Jazz and Blues
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="karaoke">
-            Karaoke
-          </button>
-          <button
-            id="atmosphere"
-            onClick={handleAtmosphere}
-            value="musicvenues"
-          >
-            Music
-          </button>
-          <button id="atmosphere" onClick={handleAtmosphere} value="poolhalls">
-            Pool Hall
-          </button>
 
-          <br></br>
-          <br></br>
-          <button onClick={goToPreviousForm}>Back</button>
-          <input id="submit-new-user" type="submit" value="Create Profile" />
+            <br />
+            <h3>Choose your favorite beverage flavors: </h3>
+            <div className="onboarding__formContainer__contentWrapper__checkbox">
+              <label>Sweet</label>
+              <input
+                id="flavors"
+                type="checkbox"
+                onChange={handleFlavorsAdding}
+                name="flavor-1"
+                value="Sweet"
+              />
+            </div>
+            <div className="onboarding__formContainer__contentWrapper__checkbox">
+              <label>Bitter</label>
+              <input
+                id="flavors"
+                type="checkbox"
+                onChange={handleFlavorsAdding}
+                name="flavor-2"
+                value="Bitter"
+              />
+            </div>
+            <div className="onboarding__formContainer__contentWrapper__checkbox">
+              <label>Sour</label>
+              <input
+                id="flavors"
+                type="checkbox"
+                onChange={handleFlavorsAdding}
+                name="flavor-3"
+                value="Sour"
+              />
+            </div>
+            <div className="onboarding__formContainer__contentWrapper__checkbox">
+              <label>Tangy</label>
+              <input
+                id="flavors"
+                type="checkbox"
+                onChange={handleFlavorsAdding}
+                name="flavor-4"
+                value="Tangy"
+              />
+            </div>
+            <div className="onboarding__formContainer__contentWrapper__checkbox">
+              <label>Dry</label>
+              <input
+                id="flavors"
+                type="checkbox"
+                onChange={handleFlavorsAdding}
+                name="flavor-5"
+                value="Dry"
+              />
+            </div>
+          </section>
+          <h3>Pick your venue vibes</h3>
+          <br />
+          <div className="onboarding__formContainer__buttonWrapper">
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="adultentertainment"
+            >
+              Adult Entertainment
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="stripclubs"
+            >
+              Strip Club
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="cocktailbars"
+            >
+              Cocktails
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="champagne_bars"
+            >
+              Fancy
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="divebars"
+            >
+              Casual and Social
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="gaybars"
+            >
+              LGBTQ+
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="hookah_bars"
+            >
+              Hookah
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="lounges"
+            >
+              Lounge
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="pubs"
+            >
+              Pubs
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="sakebars"
+            >
+              Sake
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="sportsbars"
+            >
+              Sports
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="coffeeshops"
+            >
+              Coffee
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="comedyclubs"
+            >
+              Comedy
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="danceclubs"
+            >
+              Dancing
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="jazzandblues"
+            >
+              Jazz and Blues
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="karaoke"
+            >
+              Karaoke
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="musicvenues"
+            >
+              Music
+            </button>
+            <button
+              className="onboarding__formContainer__buttonWrapper__atmosphere"
+              id="atmosphere"
+              onClick={handleAtmosphere}
+              value="poolhalls"
+            >
+              Pool Hall
+            </button>
+          </div>
+          <br />
+          <br />
+          <button
+            className="onboarding__formContainer__backButton"
+            onClick={goToPreviousForm}
+          >
+            Back
+          </button>
+          <input
+            className="onboarding__formContainer__submitInput"
+            id="submit-new-user"
+            type="submit"
+            value="Create Profile"
+          />
         </div>
       </form>
     </div>
