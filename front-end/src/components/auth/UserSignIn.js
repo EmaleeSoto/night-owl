@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import app from "../../firebase";
 import "./UserSignIn.scss";
 
@@ -56,7 +56,7 @@ export default function UserSignIn({ resetPassword }) {
   return (
     <div className="signIn">
       <form className="signIn__container" onSubmit={signIn}>
-        <h1 className="signIn_header">Let's get you logged in.</h1>
+        <h1 className="signIn__header">Welcome Back!</h1>
         <div className="signIn__inputLabelWrap">
           <label htmlFor="email">Email: </label>
           <input
@@ -83,10 +83,27 @@ export default function UserSignIn({ resetPassword }) {
           />
         </div>
         <br></br>
-        <input type="submit" id="login" value="Log In" />
-        <h4 id="forgot-password" onClick={resetPassword}>
+        <input
+          type="submit"
+          className="signIn__container__loginSubmitInput"
+          value="Log In"
+        />
+        <h4
+          className="signIn__container__authLink"
+          id="forgot-password"
+          onClick={resetPassword}
+        >
           Forgot Password?
         </h4>
+        <p>
+          Need an Account?{" "}
+          <Link
+            className="signIn__container__authLink signIn__container__navLink"
+            to="/sign-up"
+          >
+            Create an Account here.
+          </Link>
+        </p>
       </form>
     </div>
   );

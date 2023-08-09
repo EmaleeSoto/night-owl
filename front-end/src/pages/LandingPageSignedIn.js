@@ -18,14 +18,15 @@ const LandingPageSignedIn = ({ user }) => {
     return () => clearTimeout(delay);
   }, [user]);
 
-  console.log(user);
   return (
     <div>
       {isLoading ? (
         <h1 className="loadingContainer">Loading...</h1>
       ) : (
         <div className="landingContainer" data-aos="fade-up">
-          <h1>Hi {userData?.name}, what are your plans tonight?</h1>
+          <h1>
+            Hi <span>{userData?.name}</span>, what are your plans tonight?
+          </h1>
           <div className="landingContainer__imageContainer">
             <div>
               <Link to={`/establishments`}>

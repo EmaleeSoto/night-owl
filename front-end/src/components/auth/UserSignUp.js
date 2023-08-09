@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import app from "../../firebase";
 import "./UserSignUp.scss";
 
@@ -91,13 +91,19 @@ export default function SignUp() {
         <br></br>
         <input
           type="submit"
-          className="signUp__signUpButton"
+          className="signUp__container__loginSubmitInput"
           value="Create Account"
         />
         <h3>
           Our quick and easy onboarding experience will allow our algorithm to
           find the right nightlife venues for you!
         </h3>
+        <p>
+          Have an Account?{" "}
+          <Link className="signUp__container__navLink" to="/sign-in">
+            Log in.
+          </Link>
+        </p>
       </form>
     </div>
   );

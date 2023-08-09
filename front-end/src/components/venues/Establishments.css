@@ -4,6 +4,10 @@
   max-width: 250px;
 }
 
+.establishmentWrapper {
+  min-height: 70vh;
+}
+
 .one-establishment {
   width: 325px;
   text-align: center;

@@ -93,6 +93,10 @@
         }
     }
 
+    &__startButton:hover {
+      background-color: $dim_snow_white;
+    }
+
     hr {
         width: 100%;
     }

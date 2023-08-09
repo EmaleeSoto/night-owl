@@ -31,7 +31,7 @@ const Establishments = ({ user }) => {
   };
 
   return (
-    <div>
+    <div className="establishmentWrapper">
       {user.age >= 21 ? (
         <Link to="/alcohols/categories">
           <button id="index-button">Find Alcohol</button>

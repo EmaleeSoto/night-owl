@@ -7,6 +7,15 @@
 .landingContainer {
   text-align: center;
 
+  h1 {
+    color: $snow_white;
+
+    span {
+      color: $cherry
+    };
+
+  }
+
   &__imageContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
