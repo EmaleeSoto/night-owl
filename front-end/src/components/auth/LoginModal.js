@@ -62,8 +62,12 @@ const LoginModal = ({ setHomeModalOpen }) => {
           <LoginMethod
             closeModal={closeModal}
             loginOption={"Login with Facebook"}
+            icon={require("../../assets/logos/facebook.png")}
           />
-          <LoginMethod closeModal={closeModal} loginOption={"Sign Up"} />
+          <LoginMethod
+            closeModal={closeModal}
+            loginOption={"Create an Account"}
+          />
         </div>
       </div>
     </div>

@@ -10,10 +10,10 @@ export default function LoginMethod({ closeModal, loginOption, icon }) {
           className="loginMethod__loginButton__loginLink"
           to={loginOption.includes("Email") ? "/sign-in" : "/sign-up"}
         >
-          {icon && (
-            <img className="loginButton__loginLink__loginIcon" src={icon} />
-          )}
-          <h5>{loginOption}</h5>
+          <div className="loginMethod__loginButton__loginLink__contentWrapper">
+            {icon && <img src={icon} />}
+            <h5>{loginOption}</h5>
+          </div>
         </Link>
       </button>
     </div>

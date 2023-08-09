@@ -1,23 +1,45 @@
 @import '../../assets/utils/_colors.scss';
 .loginMethod {
     text-align: center;
+    margin-top: 3%;
+
+
+
+    :hover {
+        background-color: $cherry;
+    }
 
     &__loginButton {
-        width: 80%;
-        margin: 3px auto 3px auto;
+        width: 70%;
+        margin: 3px auto;
+        border: 1px solid $noir;
+        border-radius: 25px;
+        height: 10%;
+
 
         &__loginLink {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
             width: 100%;
             text-decoration: none;
             color: $noir;
     
-            img {
-                width: 24px;
-                height: auto;
+            &__contentWrapper {
+                display: flex;
+                width: 60%;
+                margin: auto;
+                justify-content: center;
+                flex-direction: row;
+                align-items: center;
+
+                img {
+                    width: 35px;
+                    height: auto;
+                }
+
+                h5 {
+                    min-width: 100%;
+                    font-size: larger;
+                    line-height: 0.1;
+                }
             }
         }
 
