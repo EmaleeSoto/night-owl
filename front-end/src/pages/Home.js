@@ -1,16 +1,13 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import LoginModal from "../components/auth/LoginModal";
 import Aos from "aos";
 import "./Home.scss";
 
-const Home = ({ homeModalOpen, setHomeModalOpen, openModal }) => {
+const Home = ({ openModal }) => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <div className={`home ${homeModalOpen ? "show" : "hide"}`}>
-      {homeModalOpen && <LoginModal setHomeModalOpen={setHomeModalOpen} />}
+    <div className="home">
       <div className="home__firstPage">
         <div className="home__textContainer">
           <h1 className="home__header">

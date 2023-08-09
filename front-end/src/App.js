@@ -12,6 +12,7 @@ import {
 import Home from "./pages/Home";
 import Footer from "./pages/Footer";
 import About from "./pages/About";
+import LoginModal from "./components/auth/LoginModal";
 import Onboarding from "./components/user/Onboarding";
 import NavBar from "./components/Nav";
 import Drinks from "./components/beverages/Drinks";
@@ -132,6 +133,7 @@ const App = () => {
           userVerified={userVerified}
           openModal={openModal}
         />
+        {homeModalOpen && <LoginModal setHomeModalOpen={setHomeModalOpen} />}
         <Routes>
           {loggedIn ? (
             <Route
