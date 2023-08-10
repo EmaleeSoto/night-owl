@@ -7,26 +7,26 @@
     text-align: center;
     border: 3px solid $cherry;
     // box-shadow: 4px 4px 4px $cherry;
-    border-radius: 15px;
+    border-radius: 35px;
     padding: 5px;
 
 
     &__venueName {
-      font-size: 30px;
       color: $cherry;
+    }
+    
+    &__venueName:hover {
+        text-decoration: underline;
     }
 
     &__venueImage {
         height: 200px;
         width: auto;
         max-width: 250px;
+        border-radius: 20px;
+        border: 3px solid $noir;
     }
       
-  }
-  
-  
-  .establishment-name:hover {
-    text-decoration: underline;
   }
 
   .oneVenue:hover {

@@ -177,7 +177,7 @@ export default function Onboarding({ userFirebaseId, callback }) {
           }
         >
           <h1 className="onboarding__formContainer__header">
-            Let's get to know you better.
+            Welcome to Night Owl
           </h1>
           <section className="onboarding__formContainer__contentWrapper">
             <div className="onboarding__formContainer__contentWrapper__inputLabelWrap">
@@ -192,7 +192,7 @@ export default function Onboarding({ userFirebaseId, callback }) {
             </div>
             <br />
             <div className="onboarding__formContainer__contentWrapper__inputLabelWrap">
-              <label htmlFor="age">Age? </label>
+              <label htmlFor="age">Date of Birth </label>
               <input
                 id="age"
                 name="age"
@@ -236,7 +236,7 @@ export default function Onboarding({ userFirebaseId, callback }) {
             </div>
             <br />
             <div className="onboarding__formContainer__contentWrapper__inputLabelWrap">
-              <label htmlFor="zip_code">Zip Code: </label>
+              <label htmlFor="zip_code">Zip Code </label>
               <input
                 id="zip_code"
                 type="text"
