@@ -30,7 +30,9 @@ const Home = ({ openModal }) => {
           </h4>
         </div>
       </div>
-      <hr />
+      <div>
+        <hr />
+      </div>
       <div className="home__nextPage" data-aos="fade-up">
         <section>
           <h1>Not just another social site</h1>
