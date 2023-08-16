@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS worth_a_shot;
-CREATE DATABASE worth_a_shot; 
+DROP DATABASE IF EXISTS night_owl;
+CREATE DATABASE night_owl; 
 
-\c worth_a_shot; 
+\c night_owl; 
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,

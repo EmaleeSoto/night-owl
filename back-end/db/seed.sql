@@ -1,4 +1,4 @@
-\c worth_a_shot
+\c night_owl
 
 INSERT INTO users (name, age, gender, zip_code, personality, flavors, atmosphere, firebase_id) VALUES
 ('John Wick', 42, 'male', '10003', 'introvert', 'bitter', 'lounges, jazzandblues, musicvenues', '100'),

@@ -19,7 +19,7 @@ app.use("/yelpvenues", yelpVenuesController);
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Welcome to Worth a Shot!");
+  res.send("Welcome to Night Owl! Emalee's Passion Project <3");
 });
 
 app.get("*", (req, res) => {
