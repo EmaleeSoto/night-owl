@@ -109,7 +109,7 @@ export default function ShowEstablishment({ user }) {
                 <span>
                   <h4>{review.user?.name}</h4>
                   <p>'{review.text}'</p>
-                  <p>Rating: {review.rating} / 5 ⭐️</p>
+                  <p>Rating: {review.rating} / 5 ⭐</p>
                 </span>
               </div>
             );

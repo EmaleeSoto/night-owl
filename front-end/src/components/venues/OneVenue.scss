@@ -2,16 +2,16 @@
 
 .oneVenue {
     cursor: pointer;
+    display: flex;
     width: 350px;
     color: $rose_quartz;
     text-align: center;
+    align-items: center;
     border: 2px solid $noir;
-    // box-shadow: 4px 4px 4px $cherry;
     border-radius: 35px;
     background-color: $midnight_plum;
     padding: 5px;
     margin-bottom: 3em;
-
 
     &__venueName {
       color: $rose_quartz;
@@ -28,7 +28,14 @@
         border-radius: 20px;
         border: 3px solid $noir;
     }
-      
+
+    a {
+      text-decoration: none;
+      color: $rose_quartz;
+      display: block;
+      height: 100%;
+    }
+
   }
 
   .oneVenue:hover {
