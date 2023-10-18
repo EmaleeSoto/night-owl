@@ -5,14 +5,16 @@
     width: 350px;
     color: $rose_quartz;
     text-align: center;
-    border: 3px solid $cherry;
+    border: 2px solid $noir;
     // box-shadow: 4px 4px 4px $cherry;
     border-radius: 35px;
+    background-color: $midnight_plum;
     padding: 5px;
+    margin-bottom: 3em;
 
 
     &__venueName {
-      color: $cherry;
+      color: $rose_quartz;
     }
     
     &__venueName:hover {
@@ -30,5 +32,5 @@
   }
 
   .oneVenue:hover {
-    border: 3px solid $rose_quartz;
+    border: 2px solid $rose_quartz;
 }

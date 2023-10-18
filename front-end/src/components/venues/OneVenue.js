@@ -13,7 +13,7 @@ export default function OneEstablishment({ venue }) {
   return (
     <div className="oneVenue" key={venue.id}>
       <div>
-        <Link to={`/establishment/${venue.id}`}>
+        <Link to={`/venue/${venue.id}`}>
           <h1 className="oneVenue__venueName">{venue.name}</h1>
           <img
             className="oneVenue__venueImage"
@@ -28,7 +28,10 @@ export default function OneEstablishment({ venue }) {
         </p>
         <p>Rating: {venue.rating} / 5</p>
 
-        <p className="pref-category"> Categories: {formatCategories()}</p>
+        <p className="pref-category">
+          {" "}
+          <span>Categories: </span> {formatCategories()}
+        </p>
       </div>
     </div>
   );

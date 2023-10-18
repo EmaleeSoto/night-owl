@@ -63,7 +63,7 @@ export default function ShowEstablishment({ user }) {
 
   return (
     <div className="establishment-show">
-      <Link id="establishment-back-button" to="/establishments">
+      <Link id="establishment-back-button" to="/venues">
         <button>Go back to Establishments</button>
       </Link>
       <h1>Check this place out!</h1>

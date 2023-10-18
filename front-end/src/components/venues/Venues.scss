@@ -16,7 +16,7 @@
   &__venuesGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    gap: 1rem;
     margin: 2em 2em;
     justify-content: center;
     justify-items: center;
