@@ -3,6 +3,7 @@
 .oneVenue {
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     width: 350px;
     color: $rose_quartz;
     text-align: center;
