@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import "./ShowEstablishment.css";
+import "./ShowVenue.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Aos from "aos";
@@ -10,8 +10,8 @@ const API = process.env.REACT_APP_API_URL;
 
 //TODO: SHOW PAGE WORKS, FIX ADDRES1 ERROR (BEING UNDEFINED)
 //SOMETIMES ADDRESS1 IS UNDEFINED AND CRASHES APP DESPITE CONDITIONAL
-export default function ShowEstablishment({ user }) {
-  const [establishment, setEstablishment] = useState({});
+export default function ShowVenue({ user }) {
+  const [venue, setVenue] = useState({});
   const [venueReviews, setVenueReviews] = useState([]);
   const [like, setLike] = useState(false);
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export default function ShowEstablishment({ user }) {
     axios
       .get(`${API}/yelpvenues/${id}`)
       .then((res) => {
-        setEstablishment(res.data);
+        setVenue(res.data);
         console.log("YELP CHECK", res.data);
       })
       .catch(() => {
@@ -52,9 +52,9 @@ export default function ShowEstablishment({ user }) {
     axios
       .post(`${API}/uservenues/addfavorite`, {
         user_uid: user.id,
-        yelp_id: establishment.id,
-        name: establishment.name,
-        image: establishment.image_url,
+        yelp_id: venue.id,
+        name: venue.name,
+        image: venue.image_url,
       })
       .catch((error) => {
         console.log(error);
@@ -62,46 +62,44 @@ export default function ShowEstablishment({ user }) {
   };
 
   return (
-    <div className="establishment-show">
-      <Link id="establishment-back-button" to="/venues">
-        <button>Go back to Establishments</button>
-      </Link>
+    <div className="venue">
+      <button className="venue__back__button">
+        <Link to="/venues">Go back to venues</Link>
+      </button>
       <h1>Check this place out!</h1>
       <br />
-      <section className="establishment-info-grid" data-aos="fade-up">
-        <div className="establishment-first-cell">
-          <h1 className="establishment-show-name">{establishment.name}</h1>
+      <section className="venue__infoGrid" data-aos="fade-up">
+        <div className="venue-first-cell">
+          <h1 className="venue-show-name">{venue.name}</h1>
           <h3>
-            Address: {establishment?.location?.display_address[0]},{" "}
-            {establishment?.location?.display_address[1]}
+            Address: {venue?.location?.display_address[0]},{" "}
+            {venue?.location?.display_address[1]}
           </h3>
-          <h4>Contact: {establishment.display_phone}</h4>
-          <h4>Rating: {establishment.rating} / 5</h4>
+          <h4>Contact: {venue.display_phone}</h4>
+          <h4>Rating: {venue.rating} / 5</h4>
           <button id="like-button" onClick={handleLike}>
             Like this bar? Save it! ⭐️
           </button>
         </div>
-        <div className="establishment-second-cell">
+        <div className="venue-second-cell">
           <img
-            alt="Establishment"
-            className="establishment-info-image"
+            alt="venue"
+            className="venue-info-image"
             src={
-              establishment.image_url !== ""
-                ? establishment.image_url
-                : "./images/no-image.png"
+              venue.image_url !== "" ? venue.image_url : "./images/no-image.png"
             }
           />
           <h3>
             Hours of Operation:{" "}
-            {militaryToUSD(establishment?.hours?.[0].open?.[0].start)} -{" "}
-            {militaryToUSD(establishment?.hours?.[0].open?.[0].end)}
+            {militaryToUSD(venue?.hours?.[0].open?.[0].start)} -{" "}
+            {militaryToUSD(venue?.hours?.[0].open?.[0].end)}
           </h3>
         </div>
       </section>
       <div className="second-grid" data-aos="fade-up">
         <section id="review-section">
           <h2>
-            Reviews on <span>{establishment.name}</span>
+            Reviews on <span>{venue.name}</span>
           </h2>
           {venueReviews?.map((review) => {
             return (
@@ -118,7 +116,7 @@ export default function ShowEstablishment({ user }) {
         <section className="venue-photo-wrap">
           <h2>Photo Gallery</h2>
           <Carousel>
-            {establishment?.photos?.map((photo) => {
+            {venue?.photos?.map((photo) => {
               return <img className="venue-photo" src={photo} alt="photo" />;
             })}
           </Carousel>
