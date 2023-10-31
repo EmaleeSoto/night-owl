@@ -24,7 +24,7 @@ import DrinksCategories from "./components/beverages/DrinksCategories";
 import Venues from "./components/venues/Venues";
 import Favorites from "./components/user/Favorites";
 import EditProfile from "./components/auth/EditProfile";
-import ShowEstablishment from "./components/venues/ShowEstablishment";
+import ShowVenue from "./components/venues/ShowVenue";
 import FourOFour from "./pages/FourOFour";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
@@ -153,10 +153,7 @@ const App = () => {
             />
           )}
           <Route path="/venues" element={<Venues user={user} />} />
-          <Route
-            path="/establishment/:id"
-            element={<ShowEstablishment user={user} />}
-          />
+          <Route path="/venue/:id" element={<ShowVenue user={user} />} />
           <Route
             path="/onboarding"
             element={
