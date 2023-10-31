@@ -1,0 +1,130 @@
+@import '../../assets/utils/_colors.scss';
+
+.venue {
+  &__backButton {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+  }
+
+  &__reviewGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    column-gap: 5px;
+    color: $snow_white;
+
+    span {
+      color: $cherry;
+    }
+  }
+
+  &__photoWrap {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    border: 10px solid $midnight_plum;
+    background-color: $midnight_plum;
+    margin-right: 2%;
+
+    &__photo {
+      width: 300px;
+      height: auto;
+    }
+  }
+
+  &__infoGrid {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 2%;
+    margin-left: 2%;
+
+    &__firstCell {
+      background-color: #051A42;
+      padding: 3%;
+      border: solid #F4C744;
+      border-radius: 15px;
+      width: 80%;
+      max-height: 70%;
+
+      &__venueName {
+        font-size: 45px;
+      }
+    }
+
+    &__secondCell {
+      &__venueImage {
+        width: 80%;
+        max-height: 90%;
+        border: 10px solid #061A43;
+      }
+    }
+  }
+
+  @media (max-width: 695px) {
+    .venue-show {
+      margin-top: 5%;
+    }
+    &__backButton {
+      position: inherit;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .venue-info-image {
+      height: 200px;
+    }
+    .venue-info-grid {
+      display: block;
+    }
+    #review-section {
+      margin-right: 2%;
+    }
+    .venue-photo-wrap {
+      margin-left: 2%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    &__backButton  {
+      width: 50px;
+    }
+    .venue-first-cell {
+      height: 500px;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .venue-info-grid {
+      display: grid; 
+      grid-template-columns: 1fr;
+    }
+    &__backButton {
+      left: 5%;
+    }
+    .venue-first-cell {
+      height: 500px;
+    }
+    &__infoGrid {
+      &__secondCell h3 {
+        width: 500px;
+      }
+    }
+  }
+
+  @media (min-width: 1279px) {
+    .venue-info-image {
+      height: 350px;
+    }
+    .venue-first-cell {
+      height: 600px;
+    }
+  }
+
+}
+

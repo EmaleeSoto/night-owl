@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import "./ShowVenue.css";
+import ShowReviews from "./ShowReviews.js";
+import "./ShowVenue.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Aos from "aos";
@@ -63,14 +64,16 @@ export default function ShowVenue({ user }) {
 
   return (
     <div className="venue">
-      <button className="venue__back__button">
+      <button className="venue__backButton">
         <Link to="/venues">Go back to venues</Link>
       </button>
       <h1>Check this place out!</h1>
       <br />
       <section className="venue__infoGrid" data-aos="fade-up">
-        <div className="venue-first-cell">
-          <h1 className="venue-show-name">{venue.name}</h1>
+        <div className="venue__infoGrid__firstCell">
+          <h1 className="venue__infoGrid__firstCell__venueName">
+            {venue.name}
+          </h1>
           <h3>
             Address: {venue?.location?.display_address[0]},{" "}
             {venue?.location?.display_address[1]}
@@ -81,10 +84,10 @@ export default function ShowVenue({ user }) {
             Like this bar? Save it! ⭐️
           </button>
         </div>
-        <div className="venue-second-cell">
+        <div className="venue__infoGrid__secondCell">
           <img
             alt="venue"
-            className="venue-info-image"
+            className="venue__infoGrid__secondCell__venueImage"
             src={
               venue.image_url !== "" ? venue.image_url : "./images/no-image.png"
             }
@@ -96,28 +99,19 @@ export default function ShowVenue({ user }) {
           </h3>
         </div>
       </section>
-      <div className="second-grid" data-aos="fade-up">
-        <section id="review-section">
-          <h2>
-            Reviews on <span>{venue.name}</span>
-          </h2>
-          {venueReviews?.map((review) => {
-            return (
-              <div className="review-info">
-                <span>
-                  <h4>{review.user?.name}</h4>
-                  <p>'{review.text}'</p>
-                  <p>Rating: {review.rating} / 5 ⭐</p>
-                </span>
-              </div>
-            );
-          })}
-        </section>
-        <section className="venue-photo-wrap">
+      <div className="venue__reviewGrid" data-aos="fade-up">
+        <ShowReviews name={venue.name} venueReviews={venueReviews} />
+        <section className="venue__photoWrap">
           <h2>Photo Gallery</h2>
-          <Carousel>
+          <Carousel width={150} autoPlay={true} infiniteLoop={true}>
             {venue?.photos?.map((photo) => {
-              return <img className="venue-photo" src={photo} alt="photo" />;
+              return (
+                <img
+                  className="venue__photoWrap__photo"
+                  src={photo}
+                  alt="photo"
+                />
+              );
             })}
           </Carousel>
         </section>
