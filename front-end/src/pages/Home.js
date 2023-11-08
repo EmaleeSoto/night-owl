@@ -9,29 +9,23 @@ const Home = ({ openModal }) => {
   return (
     <div className="home">
       <div className="home__firstPage">
-        <div className="home__textContainer">
-          <h1 className="home__header">
-            Your Night.
-            <br />
-            Your Way.
-          </h1>
-          <div className="home____homeButtonContainer">
-            <div className="home__buttonContainer">
-              <button className="home__startButton" onClick={openModal}>
-                <span>Create Account</span>
-              </button>
+        <div className="home__firstContainer">
+          <div className="home__firstContainer__middleContainer">
+            <h1 className="home__header">Your Night. Your Way.</h1>
+            <h4 className="home__quote">
+              &ldquo;I feel sorry for people that don't drink, because when they
+              wake up in the morning, that is the best they're going to feel all
+              day.&rdquo; &#8211; Frank Sinatra
+            </h4>
+            <div className="home__homeButtonContainer">
+              <div className="home__buttonContainer">
+                <button className="home__startButton" onClick={openModal}>
+                  <span>Create Account</span>
+                </button>
+              </div>
             </div>
           </div>
-
-          <h4 className="home__quote">
-            &ldquo;I feel sorry for people that don't drink, because when they
-            wake up in the morning, that is the best they're going to feel all
-            day.&rdquo; &#8211; Frank Sinatra
-          </h4>
         </div>
-      </div>
-      <div>
-        <hr />
       </div>
       <div className="home__nextPage" data-aos="fade-up">
         <section>

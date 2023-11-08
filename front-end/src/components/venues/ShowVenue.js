@@ -4,7 +4,8 @@ import axios from "axios";
 import ShowReviews from "./ShowReviews.js";
 import "./ShowVenue.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
+import { Carousel } from "flowbite-react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const API = process.env.REACT_APP_API_URL;
@@ -103,15 +104,9 @@ export default function ShowVenue({ user }) {
         <ShowReviews name={venue.name} venueReviews={venueReviews} />
         <section className="venue__photoWrap">
           <h2>Photo Gallery</h2>
-          <Carousel width={150} autoPlay={true} infiniteLoop={true}>
+          <Carousel>
             {venue?.photos?.map((photo) => {
-              return (
-                <img
-                  className="venue__photoWrap__photo"
-                  src={photo}
-                  alt="photo"
-                />
-              );
+              return <img src={photo} alt="photo" />;
             })}
           </Carousel>
         </section>

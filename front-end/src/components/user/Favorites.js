@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Favorites.css";
+import "./Favorites.scss";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Favorites({ user, Favorite }) {
   const [likedVenues, setLikedVenues] = useState([]);
-  console.log(user);
 
   useEffect(() => {
     axios
@@ -15,18 +14,17 @@ export default function Favorites({ user, Favorite }) {
         setLikedVenues([...response.data.venues]);
       })
       .catch();
-    console.log("LIKED PLACES:", likedVenues);
   }, [user]);
 
   return (
-    <div className="favorite-page">
+    <div className="favoritesPage">
       <h1>Your Favorite Places</h1>
-      <div className="favorites-container">
+      <div className="favoritesPage__container">
         {likedVenues.map((likedVenue, index) => {
           return (
-            <div className="favorites-cell" key={index}>
-              <Link to={`/establishment/${likedVenue.yelp_id}`}>
-                <h1 className="favorite-name">{likedVenue.name}</h1>
+            <div className="favoritesPage__container__cell" key={index}>
+              <Link to={`/venue/${likedVenue.yelp_id}`}>
+                <h1>{likedVenue.name}</h1>
                 <img src={likedVenue.image} alt={likedVenue.name} />
               </Link>
             </div>

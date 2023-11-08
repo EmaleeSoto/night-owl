@@ -1,0 +1,59 @@
+.favoritesPage {
+    text-align: center;
+    justify-content: center;
+    min-height: 60vh;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+        margin: 2em 2em;
+        justify-content: center;
+        justify-items: center;
+
+        img {
+            height: 200px;
+            width: auto;
+            max-width: 250px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        h1:hover {
+            text-decoration: underline;
+        }
+
+        &__cell {
+            width: 325px;
+            text-align: center;
+            box-shadow: 4px 4px 4px #061a43;
+            border-radius: 15px;
+            padding: 5px;
+        }
+    }
+
+    @media screen and (min-width: 1100px) and (max-width: 1439px) {
+        &__container {
+            grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1099px) {
+        &____container {
+            grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    @media screen and (max-width: 767px) {
+        &____container {
+            grid-template-columns: repeat(1, 1fr);
+            margin: 2em 0.5em;
+    }
+    }
+}
