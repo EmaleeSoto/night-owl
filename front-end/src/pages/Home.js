@@ -13,16 +13,22 @@ const Home = ({ openModal }) => {
           <div className="home__firstContainer__middleContainer">
             <h1 className="home__header">Your Night. Your Way.</h1>
             <h4 className="home__quote">
-              &ldquo;I feel sorry for people that don't drink, because when they
-              wake up in the morning, that is the best they're going to feel all
-              day.&rdquo; &#8211; Frank Sinatra
+              Start exploring your city's vibrant nightlife scene. Sign in or
+              create an account with us here!
             </h4>
-            <div className="home__homeButtonContainer">
-              <div className="home__buttonContainer">
-                <button className="home__startButton" onClick={openModal}>
-                  <span>Create Account</span>
-                </button>
-              </div>
+            <div className="home__buttonContainer">
+              <button
+                className="home__buttonContainer__startButton"
+                onClick={openModal}
+              >
+                <span>Sign Up</span>
+              </button>
+              <button
+                onClick={openModal}
+                className="home__buttonContainer__loginButton"
+              >
+                <span>Log in</span>
+              </button>
             </div>
           </div>
         </div>

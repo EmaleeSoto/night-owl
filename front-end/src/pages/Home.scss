@@ -1,171 +1,165 @@
 @import '../assets/utils/_colors.scss';
 // @import '../../assets/home_page_images/splashimage'
 .home {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  margin-top: -3%;
+  
+  &__firstPage {
+    display: flex; 
+    justify-content: center;
+    height: 90vh;
+  }
+  
+  &__firstContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100%;
-    margin-top: -3%;
-  
-    &__firstPage {
-      display: flex; 
-      justify-content: center;
-      height: 90vh;
-    }
-  
-    &__firstContainer {
-      display: flex;
-      width: 85%;
-      background: url("../assets/home_page_images/splashimage.jpeg") no-repeat center center fixed; 
-      background-size: cover;
-      background-attachment: scroll;
-      text-align: center;
-      align-items: center;
+    width: 85%;
+    background: url("../assets/home_page_images/splashimage.jpeg") no-repeat center center fixed; 
+    background-size: cover;
+    background-attachment: scroll;
+    text-align: center;
+    align-items: center;
 
-      &__middleContainer {
-        max-width: 70%;
-        padding: 16px 16px 12px;
-        max-height: 40%;
-        margin: 0 auto;
-        text-align: center;
-        background-color: rgba($noir, 0.85);
-        border-radius: 15px;
+    &__middleContainer {
+      max-width: 70%;
+      padding: 18px 14px;
+      max-height: 40%;
+      margin: 0 auto;
+      text-align: center;
+      background-color: rgba($noir, 0.85);
+      border-radius: 15px;
+    }
+  }
+
+  &__header {
+    color: $rose_quartz;
+    margin: 0px;
+    font-size: 48px;
+  }
+  
+  &__span {
+    color: $rose_quartz;
+    font-weight: bold;
+  }
+
+  &__quote {
+    color: $snow_white;
+    width: 80%;
+    margin: 20px auto;
+    font-size: 16px;
+  }
+
+  &__splashImage {
+    width: 5%;
+    height: auto;
+  }
+    
+  &__buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    button {
+      min-width: 144px;
+      min-height: 50px;
+      margin: 10px 5px;
+      padding: 10px;
+      font-weight: bold;
+      font-size: large;
+      border: none;
+    }
+
+    &__startButton, &__loginButton {
+      border-radius: 10px;
+      cursor: pointer;
+      span {
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        margin: 0px 10px;
+        text-decoration: none;
       }
     }
 
-    &__header {
-      color: $rose_quartz;
-      margin: 0px;
-      font-size: 48px;
-    }
-  
-    &__span {
-      color: $rose_quartz;
-      font-weight: bold;
-    }
-
-    &__quote {
-        color: $snow_white;
-        width: 80%;
-        margin: auto;
-        margin-top: 20px;
-        font-size: 14px;
-    }
-  
-    // &__splashContainer {
-    //     display: inline-block;
-    // }
-  
-    &__splashImage {
-      width: 5%;
-      height: auto;
-    }
-
-    &__homeButtonContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-    }
-
-    &__buttonContainer {
-        display: inline-block;
-    }
-  
-    &__text {
-      color: $snow_white;
-      font-size: x-large;
-    }
-
-    a {
-        text-decoration: none;
-        display: inline-block;
-    }
-
     &__startButton {
-        display: flex;
-        background-color: $snow_white;
-        margin: 20px 0px 20px 0px;
-        border-radius: 20px;
-        border: none;
-        height: 3em;
-        min-width: 25%;
-        overflow: visible;
-        padding: 20px 40px;
-        align-items: center;
-        cursor: pointer;
-        span {
-            font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: bolder;
-            color: $cherry;
-            margin: 0px 10px;
-            text-decoration: none;
-        }
+      background-color: $snow_white;
+      color: $cherry;
     }
 
     &__startButton:hover {
-      background-color: $dim_snow_white;
+      background-color: $rose_quartz;
     }
-  
-    &__nextPage {
-        margin-top: 20px;
-        color: $snow_white;
-        display: inline-block;
-        text-align: center;
+
+    &__loginButton {
+      background-color: $rose_quartz;
+      color: $noir;
+    }
+
+    &__loginButton:hover {  
+      background-color: $logo_dark_pink;
+    }
+    
+  } 
+
+  &__nextPage {
+    margin-top: 20px;
+    color: $snow_white;
+    display: inline-block;
+    text-align: center;
         
-        &__gridContainer {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            align-items: center;
-        }
+    &__gridContainer {
+      display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
 
-        &__gridCell {
-          display: flex;
-          flex-direction: column;
-          min-height: 400px;
-          align-items: center;
-          margin: 10px;
-          padding: 10px;
-          text-align: center;
-          border: 1px solid $cherry;
-          border-radius: 20px;
+    &__gridCell {
+      display: flex;
+      flex-direction: column;
+      min-height: 400px;
+      align-items: center;
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid $cherry;
+      border-radius: 20px;
 
-          p {
-            width: 70%;
-          }
-        }
-
-        &__summary {
-          width: 40%;
-          margin: auto;
-          margin-top: 3%;
-          padding: 10px;
-          border: 1px solid $cherry;
-          border-radius: 20px;
-          box-shadow: 1px black;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-
-        }
+      p {
+        width: 70%;
+      }
+    }
+    
+    &__summary {
+      width: 40%;
+      margin: auto;
+      margin-top: 3%;
+      padding: 10px;
+      border: 1px solid $cherry;
+      border-radius: 20px;
+      box-shadow: 1px black;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
         
-        h1, h3 {
-          color: $rose_quartz;
-        }
+    h1, h3 {
+      color: $rose_quartz;
+    }
 
-        h1 {
-          font-size: xx-large;
-        }
+    h1 {
+      font-size: xx-large;
+    }
       
-        img {
-          max-height: 200px;
-          width: auto;
-          border-radius: 30px;
-        }
+    img {
+      max-height: 200px;
+      width: auto;
+      border-radius: 30px;
     }
   }
+}
   
   // @media screen and (max-width: 690px) {
 //   .home-container {

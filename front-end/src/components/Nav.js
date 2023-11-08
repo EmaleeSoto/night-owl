@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Nav.scss";
 
-const Nav = ({ signOutOfAccount, loggedIn, userVerified, openModal }) => {
+const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
   const navigate = useNavigate();
 
   return (
@@ -79,14 +79,6 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified, openModal }) => {
       >
         Log out
       </button>
-
-      <div
-        className={loggedIn ? "nav__hide" : "nav__show nav__loginButtonWrapper"}
-      >
-        <button onClick={openModal} id="sign-in-button">
-          <span>Log in</span>
-        </button>
-      </div>
     </nav>
   );
 };

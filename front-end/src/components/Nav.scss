@@ -76,31 +76,19 @@
     }
   }
 
-  &__loginButtonWrapper {
-    display: flex;
+  // &__loginButtonWrapper {
+  //   display: flex;
 
-    button {
-      min-width: 144px;
-      height: auto;
-      padding: 10px;
-      font-weight: bold;
-      font-size: large;
-      border: none;
-    }
-
-    #sign-in-button {
-      border-radius: 20px;
-      color: $midnight_plum;
-      margin-right: 20px;
-      background-image: linear-gradient(to left, $logo_light_pink, $logo_dark_pink);
-    }
-
-    #sign-in-button:hover {
-      cursor: pointer;
-      background-image: linear-gradient(to left, rgba($logo_light_pink, 0.6), rgba($logo_dark_pink, 0.6));
-    }
+  //   button {
+  //     min-width: 144px;
+  //     height: auto;
+  //     padding: 10px;
+  //     font-weight: bold;
+  //     font-size: large;
+  //     border: none;
+  //   }
     
-  }
+  // }
 
   &__hide {
     display: none;
