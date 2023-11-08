@@ -1,0 +1,38 @@
+@import '../../assets/utils/_colors.scss';
+
+.thirdPage {
+    background-color: $dark_amethyst;
+    height: 90vh;
+
+    img {
+        width: auto;
+        height: 90%;
+        float: left;
+        margin: 2% 0 0 3%;
+        border: 3px solid $noir;
+        border-radius: 30px;
+    }
+
+    &__textWrap {
+        background-color: $dark_amethyst;
+        color: $snow_white;
+        width: 30%;
+        height: max-content;
+        padding: 30px 25px;
+        position: absolute;
+        right: 5%;
+        top: 30%;
+        left: auto;
+        border-radius: 10px;
+
+        p {
+            font-size: 14px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: left;
+            color: $rose_quartz;
+        }
+    }
+}

@@ -45,7 +45,7 @@ export default function Footer() {
             <li>
               <a>
                 <img
-                  src={require("../assets/logos/twitter.png")}
+                  src={require("../../assets/logos/twitter.png")}
                   alt="Twitter"
                 />
               </a>
@@ -53,20 +53,23 @@ export default function Footer() {
             <li>
               <a>
                 <img
-                  src={require("../assets/logos/instagram.png")}
+                  src={require("../../assets/logos/instagram.png")}
                   alt="Instagram"
                 />
               </a>
             </li>
             <li>
               <a>
-                <img src={require("../assets/logos/tiktok.png")} alt="TikTok" />
+                <img
+                  src={require("../../assets/logos/tiktok.png")}
+                  alt="TikTok"
+                />
               </a>
             </li>
             <li>
               <a>
                 <img
-                  src={require("../assets/logos/facebook.png")}
+                  src={require("../../assets/logos/facebook.png")}
                   alt="Facebook"
                 />
               </a>
@@ -79,7 +82,7 @@ export default function Footer() {
         <div class="footer__logo">
           <h2>Get the app!</h2>
           <div className="footer__logo__mobileAppLogo">
-            <img src={require("../assets/logos/mobile-logos.png")} />
+            <img src={require("../../assets/logos/mobile-logos.png")} />
           </div>
         </div>
       </div>

@@ -1,0 +1,56 @@
+@import '../../assets/utils/_colors.scss';
+
+.secondPage {
+    color: $snow_white;
+    display: inline-block;
+    text-align: center;
+    background-color: $noir;
+    min-height: 90vh;
+    margin-top: 2%;
+        
+    &__gridContainer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 3%;
+    }
+
+    &__gridCell {
+      display: flex;
+      flex-direction: column;
+      min-height: 400px;
+      align-items: center;
+      margin: 5px;
+      padding: 10px;
+      text-align: center;
+
+      p {
+        width: 70%;
+        font-size: 14px;
+      }
+    }
+    
+    &__summary {
+      width: 40%;
+      margin: auto;
+      margin-top: 3%;
+      padding: 10px;
+      border: 1px solid $cherry;
+      border-radius: 20px;
+      box-shadow: 1px black;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+        
+    h1, h3 {
+      color: $rose_quartz;
+    }
+
+    h1 {
+      font-size: xx-large;
+    }
+      
+    img {
+      height: 300px;
+      width: 300px;
+      border-radius: 30px;
+    }
+  }

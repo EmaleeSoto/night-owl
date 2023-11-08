@@ -11,7 +11,7 @@ const Nav = ({ signOutOfAccount, loggedIn, userVerified }) => {
           <img
             className="nav__navLogo"
             alt="Worth a Shot logo"
-            src={require("../assets/appLogo.png")}
+            src={require("../../assets/appLogo.png")}
           />
         </div>
       </Link>

@@ -9,12 +9,12 @@ import {
   sendPasswordResetEmail,
   deleteUser,
 } from "firebase/auth";
+import NavBar from "./components/layout/Nav";
+import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
 import About from "./pages/About";
 import LoginModal from "./components/auth/LoginModal";
 import Onboarding from "./components/user/Onboarding";
-import NavBar from "./components/Nav";
 import Drinks from "./components/beverages/Drinks";
 import DrinksByPrefs from "./components/beverages/DrinksByPrefs";
 import LandingPageSignedIn from "./pages/LandingPageSignedIn";
