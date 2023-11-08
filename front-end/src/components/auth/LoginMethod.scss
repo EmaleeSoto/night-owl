@@ -3,12 +3,6 @@
     text-align: center;
     margin-top: 3%;
 
-
-
-    :hover {
-        background-color: $cherry;
-    }
-
     &__loginButton {
         width: 70%;
         margin: 3px auto;
@@ -17,11 +11,9 @@
         height: 10%;
         cursor: pointer;
 
-
         &__loginLink {
             width: 90%;
             text-decoration: none;
-            color: $noir;
     
             &__contentWrapper {
                 display: flex;
@@ -42,7 +34,32 @@
                     line-height: 0.1;
                 }
             }
-        }
+        } 
+    }
 
+    &__rose {
+        background-color: $rose_quartz;
+        a {
+            color: $noir;
+        }
+    }
+
+    &__rose:hover {
+        background-color: $snow_white;
+        a {
+            color: $cherry;
+        }
+    }
+
+    &__default {
+        background-color: $snow_white;
+        a {
+            color: $noir;
+        }
+    }
+
+    &__default:hover {
+        background-color: $cherry;
     }
 }
+

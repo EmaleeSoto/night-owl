@@ -18,11 +18,13 @@
   &__firstContainer {
     display: flex;
     width: 85%;
-    background: url("../assets/home_page_images/splashimage.jpeg") no-repeat center center fixed; 
+    background: url("../assets/home_page_images/splashimage.jpg") no-repeat center center fixed; 
     background-size: cover;
     background-attachment: scroll;
     text-align: center;
     align-items: center;
+    border: 3px solid $noir;
+    border-radius: 10px;
 
     &__middleContainer {
       max-width: 70%;
