@@ -56,7 +56,7 @@ const Home = ({ openModal }) => {
             />
             <h3>Experience new flavors</h3>
             <p>
-              Night Owl provides an extesnvie guide on alcoholic beverages so
+              Night Owl provides an extensive guide on alcoholic beverages so
               you can explore a variety of drinks during your night out!
             </p>
           </div>

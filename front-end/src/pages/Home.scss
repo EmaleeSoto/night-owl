@@ -109,15 +109,15 @@
   } 
 
   &__nextPage {
-    margin-top: 20px;
+    margin-top: 2%;
     color: $snow_white;
     display: inline-block;
     text-align: center;
         
     &__gridContainer {
       display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 3%;
     }
 
     &__gridCell {
@@ -125,11 +125,9 @@
       flex-direction: column;
       min-height: 400px;
       align-items: center;
-      margin: 10px;
+      margin: 5px;
       padding: 10px;
       text-align: center;
-      border: 1px solid $cherry;
-      border-radius: 20px;
 
       p {
         width: 70%;
@@ -156,8 +154,8 @@
     }
       
     img {
-      max-height: 200px;
-      width: auto;
+      height: 300px;
+      width: 300px;
       border-radius: 30px;
     }
   }
