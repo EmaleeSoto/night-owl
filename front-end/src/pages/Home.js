@@ -39,7 +39,10 @@ const Home = ({ openModal }) => {
         </section>
         <div className="home__nextPage__gridContainer">
           <div className="home__nextPage__gridCell">
-            <img src={require("../assets/map.png")} alt="Discover new places" />
+            <img
+              src={require("../assets/home_page_images/newplaces.jpeg")}
+              alt="Discover new places"
+            />
             <h3>Discover new places</h3>
             <p>
               With Night Owl, you can discover new hangout spots that match your
@@ -48,8 +51,8 @@ const Home = ({ openModal }) => {
           </div>
           <div className="home__nextPage__gridCell">
             <img
-              src={require("../assets/alcohol.png")}
-              alt="Learn your own tastes"
+              src={require("../assets/home_page_images/newflavors.png")}
+              alt="Experience new flavors"
             />
             <h3>Experience new flavors</h3>
             <p>
@@ -59,7 +62,7 @@ const Home = ({ openModal }) => {
           </div>
           <div className="home__nextPage__gridCell">
             <img
-              src={require("../assets/dancing.jpeg")}
+              src={require("../assets/home_page_images/newpeople.png")}
               alt="Meet new people"
             />
             <h3>Meet new people</h3>
