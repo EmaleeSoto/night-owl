@@ -2,11 +2,14 @@
 
 .nav {
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   align-items: center;
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: $noir;
+  background-color: rgba($noir, 0.8);
   height: 80px;
   margin-bottom: 5%;
 
@@ -75,20 +78,6 @@
       max-height: 80px;
     }
   }
-
-  // &__loginButtonWrapper {
-  //   display: flex;
-
-  //   button {
-  //     min-width: 144px;
-  //     height: auto;
-  //     padding: 10px;
-  //     font-weight: bold;
-  //     font-size: large;
-  //     border: none;
-  //   }
-    
-  // }
 
   &__hide {
     display: none;
