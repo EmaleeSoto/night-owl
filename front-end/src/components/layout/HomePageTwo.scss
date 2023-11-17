@@ -6,7 +6,7 @@
     text-align: center;
     background-color: $noir;
     min-height: 90vh;
-    margin-top: 2%;
+    padding-bottom: 3%;
         
     &__gridContainer {
       display: grid;
@@ -23,9 +23,13 @@
       padding: 10px;
       text-align: center;
 
+      h3 {
+        font-size: 20px;
+        line-height: 0.5;
+      }
+      
       p {
         width: 70%;
-        font-size: 14px;
       }
     }
     

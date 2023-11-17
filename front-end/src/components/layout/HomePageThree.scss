@@ -6,9 +6,9 @@
 
     img {
         width: auto;
-        height: 90%;
+        height: 100%;
         float: left;
-        margin: 2% 0 0 3%;
+        margin: 2% 0 0 7%;
         border: 3px solid $noir;
         border-radius: 30px;
     }
@@ -16,7 +16,7 @@
     &__textWrap {
         background-color: $dark_amethyst;
         color: $snow_white;
-        width: 30%;
+        width: 40%;
         height: max-content;
         padding: 30px 25px;
         position: absolute;
@@ -26,13 +26,14 @@
         border-radius: 10px;
 
         p {
-            font-size: 14px;
+            font-size: 18px;
             text-align: left;
         }
 
         h2 {
             text-align: left;
             color: $rose_quartz;
+            font-size: xx-large;
         }
     }
 }

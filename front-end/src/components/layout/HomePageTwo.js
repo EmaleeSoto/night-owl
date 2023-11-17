@@ -10,7 +10,7 @@ export default function HomePageTwo() {
   return (
     <div className="secondPage" data-aos="fade-up">
       <section>
-        <h1>Not just another social media site</h1>
+        <h1>Not Just Another Social Media</h1>
       </section>
       <div className="secondPage__gridContainer">
         <div className="secondPage__gridCell">
@@ -18,7 +18,7 @@ export default function HomePageTwo() {
             src={require("../../assets/home_page_images/newplaces.jpeg")}
             alt="Discover new places"
           />
-          <h3>Discover new places</h3>
+          <h3>Discover New Places</h3>
           <p>
             With Night Owl, you can discover new hangout spots that match your
             preferred vibes by choosing between venue categories. Save your
@@ -31,7 +31,7 @@ export default function HomePageTwo() {
             src={require("../../assets/home_page_images/newflavors.png")}
             alt="Experience new flavors"
           />
-          <h3>Experience new flavors</h3>
+          <h3>Experience New Flavors</h3>
           <p>
             Unlock an extensive guide to a wide variety of beverages that you
             can order at any bar! Dive into the world of drinks curated to your
@@ -45,7 +45,7 @@ export default function HomePageTwo() {
             src={require("../../assets/home_page_images/newpeople.png")}
             alt="Meet new people"
           />
-          <h3>Meet new people</h3>
+          <h3>Meet New People</h3>
           <p>
             Whether you're looking for a friend or a partner in crime, our user
             profiling system allows you to expand your social circle. Send

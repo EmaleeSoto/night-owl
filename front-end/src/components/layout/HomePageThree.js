@@ -9,17 +9,17 @@ export default function HomePageThree() {
 
   return (
     <div className="thirdPage" data-aos="fade-up">
-      <img src={require("../../assets/home_page_images/blurbimage.jpeg")} />
+      <img src={require("../../assets/home_page_images/blurbimage.png")} />
       <div className="thirdPage__textWrap">
         <h2>Why Night Owl?</h2>
         <p>
-          Night Owl was developed with the goal of making nightlife navigation
-          simple and seamless. Whether you are a young adult who is new to the
-          nightlife scene in need of guidance, or you are a veteran night owl
-          looking for new experiences, Night Owl will hook you up with the best
-          places, drinks, and people in your city! Finding the perfect venue for
-          you and your friends has never been easier. Join Night Owl and unlock
-          a world of exciting experiences for the night owl in you!
+          Night Owl was created the with the goal of making nightlife navigation
+          more easily accessible to everyone. Now, our web application connects
+          users with nightlife activities in their city. Whether you're seeking
+          new venues, looking to try new beverages, or simply wanting to connect
+          with other night owls, our tools will allow you to engage with your
+          surroundings for the night. We've created a user-friendly platform
+          that makes it easy to channel your inner night owl.
         </p>
       </div>
     </div>
