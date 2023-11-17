@@ -10,7 +10,7 @@ export default function HomePageTwo() {
   return (
     <div className="secondPage" data-aos="fade-up">
       <section>
-        <h1>Not Just Another Social Media</h1>
+        <h1>Not Just Another Social Media Site</h1>
       </section>
       <div className="secondPage__gridContainer">
         <div className="secondPage__gridCell">

@@ -8,7 +8,7 @@ const Home = ({ openModal }) => {
     <div className="home">
       <HomePageOne openModal={openModal} />
       <HomePageTwo />
-      <HomePageThree />
+      <HomePageThree openModal={openModal} />
     </div>
   );
 };

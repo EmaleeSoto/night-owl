@@ -191,7 +191,16 @@ const App = () => {
             path="alcohols/drinksforyou"
             element={<DrinksByPrefs user={user} />}
           />
-          <Route path="/about" element={<About />} />
+          <Route
+            path="/about"
+            element={
+              <About
+                homeModalOpen={homeModalOpen}
+                setHomeModalOpen={setHomeModalOpen}
+                openModal={openModal}
+              />
+            }
+          />
           <Route path="*" element={<FourOFour loggedIn={loggedIn} />} />
         </Routes>
         <Footer />

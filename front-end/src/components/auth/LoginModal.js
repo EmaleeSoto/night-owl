@@ -3,7 +3,6 @@ import LoginMethod from "./LoginMethod";
 import "./LoginModal.scss";
 
 const LoginModal = ({ setHomeModalOpen }) => {
-  //TODO: Extremely unsure how to do this without using document selector. How do I target the whole body?
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {

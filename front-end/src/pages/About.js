@@ -3,7 +3,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import "./About.scss";
 
-const About = () => {
+const About = ({ homeModalOpen, setHomeModalOpen, openModal }) => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
