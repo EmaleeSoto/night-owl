@@ -3,6 +3,7 @@
 .aboutSection {
   color: $snow_white;
   z-index: 0 !important;
+  margin-top: -4%;
 
   &__header {
     text-align: center;
@@ -23,21 +24,33 @@
 
     &__contentWrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 45% 55%;
 
       img {
         border-radius: 30px;
-
+        float: right;
+        margin: 10px 0px 10px 12%;
       }
 
       &__text {
+        display: flex;
+        flex-direction: column;
 
-        div {
-          float: right;
+        &__left, &__right {
+          max-width: 70%;
+          position: sticky;
           background-color: $noir;
-          padding: 2%;
+          padding: 10px 20px;
+          margin: 10px;
           border-radius: 15px;
-          // max-width: 30%;
+        }
+
+        &__left {
+          align-self: flex-start;
+        }
+
+        &__right {
+          align-self: flex-end;
         }
 
         span {

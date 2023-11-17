@@ -19,13 +19,38 @@ const About = () => {
             alt="Night Owl Girl"
           />
           <div className="aboutSection__firstPage__contentWrapper__text">
-            <div>
+            <div
+              className="
+              aboutSection__firstPage__contentWrapper__text__left"
+            >
               <p>
                 <span>Why Night Owl is Important</span> - Embraced by many, the
                 nightlife holds a significant place in people's lives. Night Owl
                 serves as a friendly guide for those who want to experience the
                 nightlife in their city. Navigating new experiences is seamless
                 and easy!
+              </p>
+            </div>
+            <div
+              className="
+              aboutSection__firstPage__contentWrapper__text__right"
+            >
+              <p>
+                <span>How Night Owl Works</span> - Our extensive onboarding
+                experience is designed to learn about who you are and what you
+                like. Tell us about yourself, and we'll guide you through your
+                night.
+              </p>
+            </div>
+            <div
+              className="
+              aboutSection__firstPage__contentWrapper__text__left"
+            >
+              <p>
+                <span>What Night Owl Brings to Your City</span> - We aren't just
+                a social media site. We build a community of like-minded night
+                owls who want to connect with each other. Take the first step in
+                forming your new social circle in your city.
               </p>
             </div>
           </div>
