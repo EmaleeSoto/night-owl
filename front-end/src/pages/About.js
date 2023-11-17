@@ -9,46 +9,29 @@ const About = () => {
   }, []);
   return (
     <section className="aboutSection" data-aos="fade-up">
-      <h1 className="aboutSection__header">
-        Reinventing the Night Life Experience
-      </h1>
-      <div className="aboutSection__text">
-        <p>
-          Welcome to Night Owl, the ultimate social app for those who crave
-          unforgettable nights filled with the perfect ambiance, tantalizing
-          libations, and delightful connections. We're here to guide you through
-          the nocturnal wonders of your city and help you craft extraordinary
-          experiences that will leave you yearning for more.
-        </p>
-        <p>
-          With Night Owl, finding your ideal nightlife destination has never
-          been easier. Our integration with the Yelp API allows you to
-          effortlessly discover venues that align with your desired atmosphere,
-          whether you seek the cozy intimacy of a speakeasy or the vibrant
-          energy of a bustling nightclub.
-        </p>
-        <p>
-          That's not all. Our extensive database of alcoholic beverages enables
-          you to dive into the world of mixology, empowering you to make
-          informed choices about the libations that tickle your taste buds.
-          Discover new cocktails, learn about their ingredients, and get
-          inspired to try something new when you arrive at your chosen
-          establishment.
-        </p>
-        <p>
-          What truly sets Night Owl apart is our commitment to fostering
-          connections. Connect with fellow night owls who share your passion for
-          memorable experiences, and together, create memories that will last a
-          lifetime. Night Owl is the catalyst for forging meaningful connections
-          during your nocturnal escapades.
-        </p>
-        <p>
-          Join us on Night Owl, where the night comes alive, friendships are
-          forged, and the possibilities are endless. Unleash your inner night
-          owl and embark on an extraordinary journey.
-        </p>
+      <div className="aboutSection__firstPage">
+        <h1 className="aboutSection__header">
+          Reinventing the Night Life Experience
+        </h1>
+        <div className="aboutSection__firstPage__contentWrapper">
+          <img
+            src={require("./../assets/about_page_images/nightowlgirl.png")}
+            alt="Night Owl Girl"
+          />
+          <div className="aboutSection__firstPage__contentWrapper__text">
+            <div>
+              <p>
+                <span>Why Night Owl is Important</span> - Embraced by many, the
+                nightlife holds a significant place in people's lives. Night Owl
+                serves as a friendly guide for those who want to experience the
+                nightlife in their city. Navigating new experiences is seamless
+                and easy!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div data-aos="fade-up">
+      <div className="aboutSection__secondPage" data-aos="fade-up">
         <h1 className="aboutSection__bioHeader">Meet Our Dev</h1>
         <section className="aboutSection__bioSection">
           <article>

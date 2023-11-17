@@ -7,8 +7,9 @@
   
   &__firstContainer {
     display: flex;
-    width: 85%;
-    background: url("../../assets/home_page_images/splashimage.jpg") no-repeat center center fixed; 
+    width: 100%;
+    height: auto;
+    background: url("../../assets/home_page_images/splashimage.png") no-repeat center center fixed; 
     background-size: cover;
     background-attachment: scroll;
     text-align: center;

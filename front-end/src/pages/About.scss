@@ -14,15 +14,40 @@
     margin-right: 20px;
   }
 
-  &__text {
-    min-height: 50vh;
-    margin-left: 15%;
-    margin-right: 15%;
+  &__firstPage {
+    min-width: 60%;
+    min-height: 90vh;
     font-size: 17px;
     text-align: left;
     line-height: 1.5;
-  }
 
+    &__contentWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      img {
+        border-radius: 30px;
+
+      }
+
+      &__text {
+
+        div {
+          float: right;
+          background-color: $noir;
+          padding: 2%;
+          border-radius: 15px;
+          // max-width: 30%;
+        }
+
+        span {
+          color: $rose_quartz;
+          font-weight: bold;
+        }
+      }
+    }
+    
+  }
 
   &__bioHeader {
     text-align: center;
