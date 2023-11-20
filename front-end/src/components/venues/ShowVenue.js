@@ -3,15 +3,12 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import ShowReviews from "./ShowReviews.js";
 import "./ShowVenue.scss";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from "react-responsive-carousel";
-import { Carousel } from "flowbite-react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const API = process.env.REACT_APP_API_URL;
 
-//TODO: SHOW PAGE WORKS, FIX ADDRES1 ERROR (BEING UNDEFINED)
-//SOMETIMES ADDRESS1 IS UNDEFINED AND CRASHES APP DESPITE CONDITIONAL
 export default function ShowVenue({ user }) {
   const [venue, setVenue] = useState({});
   const [venueReviews, setVenueReviews] = useState([]);
@@ -66,47 +63,55 @@ export default function ShowVenue({ user }) {
   return (
     <div className="venue">
       <button className="venue__backButton">
-        <Link to="/venues">Go back to venues</Link>
+        <Link to="/venues">Go back to Venues</Link>
       </button>
-      <h1>Check this place out!</h1>
-      <br />
       <section className="venue__infoGrid" data-aos="fade-up">
-        <div className="venue__infoGrid__firstCell">
-          <h1 className="venue__infoGrid__firstCell__venueName">
-            {venue.name}
-          </h1>
-          <h3>
-            Address: {venue?.location?.display_address[0]},{" "}
-            {venue?.location?.display_address[1]}
-          </h3>
-          <h4>Contact: {venue.display_phone}</h4>
-          <h4>Rating: {venue.rating} / 5</h4>
-          <button id="like-button" onClick={handleLike}>
-            Like this bar? Save it! ⭐️
-          </button>
-        </div>
-        <div className="venue__infoGrid__secondCell">
-          <img
-            alt="venue"
-            className="venue__infoGrid__secondCell__venueImage"
-            src={
+        <div
+          className="venue__infoGrid__firstCell"
+          style={{
+            backgroundImage: `url(${
               venue.image_url !== "" ? venue.image_url : "./images/no-image.png"
-            }
-          />
+            })`,
+            backgroundSize: "cover",
+          }}
+        >
           <h3>
             Hours of Operation:{" "}
             {militaryToUSD(venue?.hours?.[0].open?.[0].start)} -{" "}
             {militaryToUSD(venue?.hours?.[0].open?.[0].end)}
           </h3>
         </div>
+        <div className="venue__infoGrid__secondCell">
+          <div className="venue__infoGrid__secondCell__contentWrapper">
+            <h1>{venue.name}</h1>
+            <h3>
+              Address: {venue?.location?.display_address[0]},{" "}
+              {venue?.location?.display_address[1]}
+            </h3>
+            <h4>Contact: {venue.display_phone}</h4>
+            <h4>Rating: {venue.rating} / 5</h4>
+            <button id="like-button" onClick={handleLike}>
+              Like this bar? Save it! ⭐️
+            </button>
+          </div>
+        </div>
       </section>
       <div className="venue__reviewGrid" data-aos="fade-up">
         <ShowReviews name={venue.name} venueReviews={venueReviews} />
-        <section className="venue__photoWrap">
+        <section className="venue__reviewGrid__photoWrap">
           <h2>Photo Gallery</h2>
-          <Carousel>
+          <Carousel
+            width={90}
+            autoPlay={true}
+            interval={3000}
+            centerMode={true}
+          >
             {venue?.photos?.map((photo) => {
-              return <img src={photo} alt="photo" />;
+              return (
+                <div>
+                  <img src={photo} alt="photo" />
+                </div>
+              );
             })}
           </Carousel>
         </section>
