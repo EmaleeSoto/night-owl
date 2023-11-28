@@ -65,6 +65,11 @@ export default function ShowVenue({ user }) {
       <button className="venue__backButton">
         <Link to="/venues">Go back to Venues</Link>
       </button>
+
+      <Link to="/venues">
+        <button className="venue__backButton">Back</button>
+      </Link>
+
       <section className="venue__infoGrid" data-aos="fade-up">
         <div
           className="venue__infoGrid__firstCell"

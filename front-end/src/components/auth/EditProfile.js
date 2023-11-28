@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./EditProfile.css";
+import "./EditProfile.scss";
 const API = process.env.REACT_APP_API_URL;
 
 function EditProfile({
@@ -53,9 +53,9 @@ function EditProfile({
 
   const handleAtmosphere = (event) => {
     event.preventDefault();
-    event.target.className === "clicked"
-      ? (event.target.className = "not-clicked")
-      : (event.target.className = "clicked");
+    event.target.className === "editPage__form__clicked"
+      ? (event.target.className = "editPage__form__notClicked")
+      : (event.target.className = "editPage__form__clicked");
     let atmosphereString = userEdit.atmosphere;
     let newArray = userEdit.atmosphere.split(", ");
     if (newArray.indexOf(event.target.value) >= 0) {
@@ -70,8 +70,8 @@ function EditProfile({
   };
 
   const handleFlavorsAdding = (event) => {
-    let flavorsString = userEdit.flavors;
-    let newArray = userEdit.flavors.split(", ");
+    const flavorsString = userEdit.flavors;
+    const newArray = userEdit.flavors.split(", ");
     if (newArray.indexOf(event.target.value) >= 0) {
       newArray.splice(newArray.indexOf(event.target.value), 1);
       setUserEdit({ ...user, flavors: newArray.join(", ") });
@@ -110,18 +110,20 @@ function EditProfile({
     }
   };
   return (
-    <div className="edit-profile">
+    <div className="editPage">
       <h1>Let's make sure we've got everything right.</h1>
       {!userVerified ? (
-        <h4 id="not-verified" onClick={sendEmailVerification}>
+        <h4 className="editPage__unverified" onClick={sendEmailVerification}>
           Verify your email address!
         </h4>
       ) : (
-        <h4 id="verified">Your email address is verified ✅</h4>
+        <h4 className="editPage__verified">
+          Your email address is verified ✅
+        </h4>
       )}
-      <form className="user-edit-form" onSubmit={handleSubmit}>
-        <section className="info-wrap">
-          <div className="input-label-wrap">
+      <form className="editPage__form" onSubmit={handleSubmit}>
+        <section className="editPage__form__infoSection">
+          <div className="editPage__form__infoSection__inputLabelWrap">
             <label className="bold" htmlFor="name">
               Name:{" "}
             </label>
@@ -221,7 +223,9 @@ function EditProfile({
           </select>
           <br />
           <br />
-          <label id="bev-flavors">Bev Flavors</label>
+          <label className="editPage__form__infoSection__flavorsHeader">
+            Bev Flavors
+          </label>
           <br />
           <label>Sweet</label>
           <input
@@ -274,192 +278,230 @@ function EditProfile({
           />
           <br />
         </section>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("adultentertainment")
-              ? "clicked"
-              : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="adultentertainment"
-        >
-          Adult Entertainment
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("stripclubs") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="stripclubs"
-        >
-          Strip Club
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("cocktailbars") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="cocktailbars"
-        >
-          Cocktails
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("champagne_bars") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="champagne_bars"
-        >
-          Fancy
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("divebars") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="divebars"
-        >
-          Casual and Social
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("gaybars") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="gaybars"
-        >
-          LGBTQ+
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("hookah_bars") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="hookah_bars"
-        >
-          Hookah
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("lounges") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="lounges"
-        >
-          Lounge
-        </button>
-        <button
-          id="atmosphere"
-          className={checkAtmosphereExists("pubs") ? "clicked" : "not-clicked"}
-          onClick={handleAtmosphere}
-          value="pubs"
-        >
-          Pubs
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("sakebars") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="sakebars"
-        >
-          Sake
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("sportsbars") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="sportsbars"
-        >
-          Sports
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("coffeeshops") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="coffeeshops"
-        >
-          Coffee
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("comedyclubs") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="comedyclubs"
-        >
-          Comedy
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("danceclubs") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="danceclubs"
-        >
-          Dancing
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("jazzandblues") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="jazzandblues"
-        >
-          Jazz and Blues
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("karaoke") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="karaoke"
-        >
-          Karaoke
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("musicvenues") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="musicvenues"
-        >
-          Music
-        </button>
-        <button
-          id="atmosphere"
-          className={
-            checkAtmosphereExists("poolhalls") ? "clicked" : "not-clicked"
-          }
-          onClick={handleAtmosphere}
-          value="poolhalls"
-        >
-          Pool Hall
-        </button>
+        <section className="editPage__form__buttonWrapper">
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("adultentertainment")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="adultentertainment"
+          >
+            Adult Entertainment
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("stripclubs")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="stripclubs"
+          >
+            Strip Club
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("cocktailbars")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="cocktailbars"
+          >
+            Cocktails
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("champagne_bars")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="champagne_bars"
+          >
+            Fancy
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("divebars")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="divebars"
+          >
+            Casual and Social
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("gaybars")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="gaybars"
+          >
+            LGBTQ+
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("hookah_bars")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="hookah_bars"
+          >
+            Hookah
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("lounges")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="lounges"
+          >
+            Lounge
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("pubs")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="pubs"
+          >
+            Pubs
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("sakebars")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="sakebars"
+          >
+            Sake
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("sportsbars")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="sportsbars"
+          >
+            Sports
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("coffeeshops")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="coffeeshops"
+          >
+            Coffee
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("comedyclubs")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="comedyclubs"
+          >
+            Comedy
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("danceclubs")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="danceclubs"
+          >
+            Dancing
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("jazzandblues")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="jazzandblues"
+          >
+            Jazz and Blues
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("karaoke")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="karaoke"
+          >
+            Karaoke
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("musicvenues")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="musicvenues"
+          >
+            Music
+          </button>
+          <button
+            id="atmosphere"
+            className={
+              checkAtmosphereExists("poolhalls")
+                ? "editPage__form__clicked"
+                : "editPage__form__notClicked"
+            }
+            onClick={handleAtmosphere}
+            value="poolhalls"
+          >
+            Pool Hall
+          </button>
+        </section>
 
         <br />
         <br />
         <input id="edit-user" type="submit" value="Update Profile" />
       </form>
-      <button className="delete-button" onClick={handleDelete}>
+      <button className="editPage__deleteButton" onClick={handleDelete}>
         Delete Profile
       </button>
     </div>

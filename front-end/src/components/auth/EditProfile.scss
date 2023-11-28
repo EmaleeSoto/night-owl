@@ -1,0 +1,111 @@
+@import '../../assets/utils/_colors.scss';
+
+.editPage {
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  
+  h4 {
+    margin: auto;
+    width: 300px;
+  }
+
+  &__unverified {
+    color: red;
+  }
+
+  &__unverified:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &__verified {
+    color: green;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  &__form {
+    
+      &__infoSection {
+        border: 1px solid $cherry;
+        border-radius: 15px;
+        background-color: $noir;
+        text-align: center;
+        margin: auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        width: 60%;
+        padding: 3%;
+        
+        &__inputLabelWrap {
+          display: block;
+          margin-top: 3%;
+          justify-content: center;
+          
+          label {
+            display: inline-block;
+            font-weight: bold;
+            width: 5%;
+            margin-right: 5%;
+          }
+
+          input {
+            border-radius: 5px;
+            width: 50%;
+            margin-left: 7%;
+            margin-right: 7%;
+          }
+        }
+
+        &__bevHeader {
+          margin-top: 20%;
+          font-weight: bold;
+          text-decoration: underline;
+        }
+      }
+
+      &__buttonWrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-auto-rows: 1fr;
+        grid-gap: 10px;
+        justify-content: center;
+
+        button {
+          text-align: center;
+          border-radius: 10px;
+          padding: 10px 15px;
+          font-size: large;
+          font-weight: 700;
+          border: 2px solid $noir;
+          cursor: pointer;
+        }
+      }
+
+    &__clicked {
+      background-color: $cherry;
+      color: $snow_white;
+    }
+
+    &__clicked:hover {
+      background-color: $dim_cherry;
+    }
+
+    &__notClicked {
+      background-color: $snow_white;
+      color: $noir;
+    }
+
+    &__notClicked:hover {
+      background-color: $rose_quartz;
+    }
+  }
+
+  &__deleteButton:hover {
+    background-color: #d00;
+    color: #fff;
+  }
+}
