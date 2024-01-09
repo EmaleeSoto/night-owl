@@ -9,7 +9,9 @@ export default function HomePageThree({ openModal }) {
 
   return (
     <div className="thirdPage" data-aos="fade-up">
-      <img src={require("../../assets/home_page_images/blurbimage.png")} />
+      <div className="thirdPage__imageWrap">
+        <img src={require("../../assets/home_page_images/blurbimage.jpg")} />
+      </div>
       <div className="thirdPage__textWrap">
         <h2>Why Night Owl?</h2>
         <div>
@@ -23,7 +25,9 @@ export default function HomePageThree({ openModal }) {
             created a user-friendly platform that makes it easy to channel your
             inner night owl.
           </p>
-          <button onClick={openModal}>Get Started</button>
+          <div>
+            <button onClick={openModal}>Get Started</button>
+          </div>
         </div>
       </div>
     </div>

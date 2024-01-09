@@ -1,17 +1,28 @@
 @import '../../assets/utils/_colors.scss';
 
 .thirdPage {
+    display: flex;
+    flex-direction: row;
     background-color: $dark_amethyst;
     height: 90vh;
+    align-items: center;
 
-    img {
-        width: auto;
-        height: 100%;
-        float: left;
-        margin: 2% 0 0 7%;
-        border: 3px solid $noir;
-        border-radius: 30px;
+    &__imageWrap {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        min-width: 55%;
+
+        img {
+            width: 100%;
+            height: auto;
+            margin: auto;
+            border: 3px solid $noir;
+            border-radius: 30px;
+        }
+
     }
+
 
     &__textWrap {
         background-color: $dark_amethyst;
@@ -19,7 +30,6 @@
         width: 40%;
         height: max-content;
         padding: 30px 25px;
-        position: absolute;
         right: 5%;
         top: 30%;
         left: auto;
@@ -46,6 +56,7 @@
             color: $cherry;
             border-radius: 10px;
             cursor: pointer;
+            float: left;
         }
 
         button:hover {
