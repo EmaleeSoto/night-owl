@@ -123,7 +123,7 @@ function EditProfile({
       )}
       <form className="editPage__form" onSubmit={handleSubmit}>
         <section className="editPage__form__infoSection">
-          <div className="editPage__form__infoSection__inputLabelWrap">
+          <div className="editPage__form__infoSection__nameAgeWrapper">
             <label className="bold" htmlFor="name">
               Name:{" "}
             </label>
